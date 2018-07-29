@@ -1,0 +1,1 @@
+/* General Effect.History:Copyright © 2001 John Henry Thompson. All rights reserved.2001.07.14	jht	Created.*/#pragma onceclass CCapturePane;class CGenEffect{public:	virtual void	Step(CCapturePane *myPane) = 0;};

@@ -1,0 +1,1 @@
+(setq sing-to-me-song '(1 4168))(setq song-list	'( (400 700) (400 700) (400 700) (400 700)	))(defun m1()	(while (not (buttonp))		(mov1 sing-to-me-song)	))(defun m2()	(while (not (buttonp))		(mov1 song-list)	))(defun m3()	(mov1 song-list))

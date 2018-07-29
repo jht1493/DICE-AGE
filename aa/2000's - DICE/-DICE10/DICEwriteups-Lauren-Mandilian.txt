@@ -1,0 +1,66 @@
+E00- Resets stage
+
+E01- Creates ?ghosting? effect
+As the actor moves, a disappearing trail is left behind him.  Use the Still Factor to set how much or how little of a trail you want.  If you turn the Still Factor up very high (>50), the actor?s form will disappear and his movement will create organic shapes.
+
+E02- Creates colored outlines over black
+The screen is black until it detects motion.  Once the actor begins moves, it will display his outlines.  This filter works best for quick movement.
+
+E03- Creates white outlines over black
+This filter is similar to E02 except the outlines are white.  Use the Diff Tolerance to set how detailed you want your image to be; the smaller the number, the more the detail.  Movement for this filter does not have to be as quick as the movement for E02.
+
+E04- Creates black outline over white
+This filter is similar to E03 except the outlines are black and the background is white.  Use the Diff Tolerance to set how detailed you want your image to be; the smaller the number, the more the detail.  Movement for this filter does not have to be as quick as the movement for E02.
+
+E05- Creates form over black
+This filter is similar to E02.  Instead of seeing just the actor?s outline, you see his entire form.  Set the Diff Tolerance to 5 for the filter to work the best.  This filter is a little buggy in that it has trouble matting out the entire form and black areas can appear.  This filter would be better for shots that are farther away and have less detail.
+
+E06- Creates a static trail (white)
+As the actor moves, a white trail is left behind him.  If he continues to moves around the stage, the trail will eventually build up to solid white.  For best results, start with a black screen (select E02 first then E06) and the Diff Tolerance set high.  This filter would be better for shorter shots that are farther away.
+
+E07- Creates a static trail (true color)
+As the actor moves, his trail is left behind him.  If he continues to moves around the stage, the trail will eventually build and replicate over itself. For best results, start with a black screen (select E02 first then E07) and the Diff Tolerance set high.  This filter creates a hand drawn or color pencil look.
+
+E08- Creates a static trail (color)
+As the actor moves, a color trail is left behind him.  If he continues to moves around the stage, the trail will eventually build and replicate over itself.  The color changes every time there is a change in movement.  For best results, start with a black screen (select E02 first then E06).  Use the Diff Tolerance to set how fast or slow you want the colors to dissipate; the smaller the number the faster the color dissipates.  Use the Color Cycle Period to set how much of a gradient you want during the movement; the bigger the number, the more the gradient.  This filter creates an abstract painting look and has a 70s feel.
+
+E09- Creates noise effect
+The actor is slightly visible if he is stationary, but becomes more detailed as he moves.  However, if the movement is too fast, then the detail is lost and the actor just becomes a trail. This filter affects the background as well.
+
+E10- Creates noise effect (true color)
+This filter is similar to E09, but takes the true color and adds noise.  The actor is visible if he is stationary and becomes blurry as he moves.  Use the Diff Tolerance to set how much of a trail you want; the bigger the number, the larger the trail.  This filter affects the background as well.
+
+E11- Creates gray outlines over black
+This filter is similar to E02 except the outlines are gray.  The filter is not as noticeable as the other filters because there is a strong contrast between the black background and the grey outlines.  This filter works best for quick movement that doesn?t need to be emphasized.
+
+E12- Creates ?speed lines? effect (true color)
+This filter turns the stage into thin lines.  Use the Diff Tolerance to set how long you want the lines to be; the bigger the number, the larger the lines.  Anything <10 will affect the actor and the background.  Anything >10 will only affect the actor and the background will be black; if no movement is detected, the stage will turn black.  This filter would be useful if you want to create speed in your movement.
+
+E13- Creates ?speed lines? effect (color)
+This filter is similar to E12, but the lines are different colors.  The color changes randomly (about every 5 seconds).  Use the Diff Tolerance to set how long you want the lines to be; the bigger the number, the larger the lines.  Anything <10 will affect the actor and the background.  Anything >10 will only affect the actor and the background will be black; if no movement is detected, the stage will turn black.  This filter would be useful if you want to create speed using abstract colors.
+
+E14- Creates ?speed lines? effect with trail (color)
+This filter is similar to E13, but creates a colored trail.  If the actor continues to moves around the stage, the lines trail will eventually build and replicate over itself.  Use the Diff Tolerance to set how long you want the lines to be; the bigger the number, the larger the lines.  For best results, use a number >10.  Anything <20 will affect the actor and the background.  Anything >20 will only affect the actor.  This filter would be useful if you want to create speed and abstract shapes using color.
+
+E15- Expands and contracts
+This filter expands and contracts your stage every second.  Because of this, the viewer can miss movement because the stage is constantly changing.  This filter would work best for quick shots stationary poses.
+
+E16- Creates grayscale
+This filter turns your footage into a gray scale and the blackest areas will become grainy.  Use the Diff Tolerance to set how much black/grain you want; the bigger the number, the more black/grain you will have.  This filter affects the background as well.
+
+E17- Creates ?free-frame? effect
+This filter takes your footage and freezes it using noise.  This filter affects the background as well.  This filter would be useful if you used in between two moving shots to emphasis an interesting pose.
+
+E18- Creates ?ghosting? effect and removes background
+This filter is similar to E02, but removes whatever is not moving.  Use the Diff Tolerance to set how much of the background you want removed; the bigger the number, the less the background appears.  This filter would be useful if you wanted to have different actors disappear on the stage without having them physically leave the stage; all they have to do is stop moving.
+
+E19- Creates ?infra red? effect
+Use the Diff Tolerance to set how detailed you want your actor to be; the smaller the number, the more the detail.  Anything <10 will affect the actor and the background.  Anything >10 will only affect the actor.  If you want to create a trail, set the Factor to 9.  If you only want the outlines, set the Factor >10; the bigger the number, the less detailed the outline.  Use the Palette dropdown to select the color scheme.  When the Diff Tolerance is set high and the Factor is set to 9, the actor is lost and the movement creates interesting abstract shapes.
+
+E21- Creates ?green screen? effect
+Remove anything that will be moving from the stage and select Set Back Image.  From there, anything that moves into the stage will be matted in and the background will be removed.  This filter is a little buggy in that it has trouble matting out the entire form and black areas can appear.  For best results, set the Diff Tolerance to 25.  Good for a quick green screen effect.
+
+E22- Creates ?green screen? and ?ghosting? effect
+This filter combines E01 and E21.  Remove anything that will be moving from the stage and select Set Back Image.  From there, anything that moves into the stage will be matted in and the background will be removed.  As the actor moves, a disappearing trail is left behind him.  This filter is a little buggy in that it has trouble matting out the entire form and black areas can appear.  Use the Still Factor to set how much or how little of a trail you want.  For best results, set the Diff Tolerance to 25.
+
+

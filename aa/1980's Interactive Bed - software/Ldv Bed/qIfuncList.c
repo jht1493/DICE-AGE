@@ -1,0 +1,1 @@
+/**/#include "qDef.h"qItem icar(), icdr(), inullp(), ieq(), isetq(), irplaca(), irplacd();qIfunc qIfuncList[] =	{	{ 

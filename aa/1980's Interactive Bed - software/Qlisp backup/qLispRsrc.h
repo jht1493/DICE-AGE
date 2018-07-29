@@ -1,0 +1,1 @@
+/*Resource id's for Video Works compiler.*/#define AboutBox		1000#define PlainMsg		460#define AllocFailed		461#define RunningOut		306#define	FileLocked		304#define DiscProtected	303#define DiscFull		302#define DiscTrouble		256

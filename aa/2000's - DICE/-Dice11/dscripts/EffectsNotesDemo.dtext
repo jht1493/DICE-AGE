@@ -1,0 +1,314 @@
+// Convolve Effect demo
+libpath = DocPath();n = 2ww = 640; wh = 480w = ww / n; h = wh / n;	// The dimension of the imageimg = new Image(w, h);	// Create an image buffer to store frame from cameracam = new Camera();	// Create a Camera objectcam.output = img;		
+
+color_int = new Color(255,255,255)	// Color to apply to image difference
+
+win2 = new Window(20, 0, ww, wh);	// Window use to present the result of the Effectwin2.show();
+
+// ---------------------------------------------------------------------------------------// ---------------------------------------------------------------------------------------
+function processThem() {	cam.process();	
+	procEff.process();		colCycle.step();		controlWin.issueReport();}// ---------------------------------------------------------------------------------------
+function spendTime() {	processThem();}
+
+// ---------------------------------------------------------------------------------------function ColorCycle(color_int){	this.color_int = color_int;	this.color = new Array();	this.colorCycleDelta = new Array();	this.colorCycleCount = 30;	this.colorCycleIndex = 0;		var i;	for (i = 0; i < 3; i++)	{		this.colorCycleDelta[i] = 255.0 / this.colorCycleCount;		this.color[i] = 0;	}}	ColorCycle.prototype.step = function(){	var i;	for (i = 0; i < 3; i++)	{		this.color[i] += this.colorCycleDelta[i];	}	this.colorCycleIndex++;	if (this.colorCycleIndex >= this.colorCycleCount)	{		var		color_target;		for (i = 0; i < 3; i++)		{			color_target = Math.random() * 255;			this.colorCycleDelta[i] = (color_target - this.color[i]) / this.colorCycleCount;		}				this.colorCycleIndex = 0;	}	this.color_int.red = this.color[0];	this.color_int.green = this.color[1];	this.color_int.blue = this.color[2];}
+
+var colCycle = new ColorCycle(color_int);
+
+// ---------------------------------------------------------------------------------------function ControlWin() {	var w = new Window( 640+80 /*-left-*/, 0 + 20 /*-top-*/, 150 /*-width-*/, 380 /*-height-*/ );
+	this.win = w;
+	var left = 4;
+	var top = 4;
+	var wid = 120;
+	var hi = 22;
+
+	w.ctl1 = new TextField( w, left,  top, 140, 22 );
+	w.ctl1.title = "Effects  Demo"	w.ctl1.visible = 1
+	w.ctl1.editable = 1;
+
+	top += hi + 4;
+	w.fps = new TextField( w, left,  top, 140, 22 );
+	w.fps.title = "FPS "	w.fps.visible = 1
+
+	top += hi + 4;
+	w.note = new TextField( w, left,  top, 140, 22 );
+	w.note.title = "Note  "	w.note.visible = 1
+
+	top += hi + 4;
+	var btn1 = new PushButton(w, left, top, wid, hi);
+	btn1.title = "Camera";
+	btn1.visible = 1;
+	btn1.mouseClick = function () {  DoCameraEff(); };
+
+	top += hi + 4;
+	btn1 = new PushButton(w, left, top, wid, hi);
+	btn1.title = "Delay";
+	btn1.visible = 1;
+	btn1.mouseClick = function () {  DoDelayEff(); };
+
+	top += hi + 4;
+	btn1 = new PushButton(w, left, top, wid, hi);
+	btn1.title = "Delay 40";
+	btn1.visible = 1;
+	btn1.mouseClick = function () {  DoDelayEff2(); };
+
+	top += hi + 4;
+	btn1 = new PushButton(w, left, top, wid, hi);
+	btn1.title = "Convolve";
+	btn1.visible = 1;
+	btn1.mouseClick = function () {  DoConvolveEff(); };
+
+	top += hi + 4;
+	btn1 = new PushButton(w, left, top, wid, hi);
+	btn1.title = "DiffEffect";
+	btn1.visible = 1;
+	btn1.mouseClick = function () {  DoDiffEff(); };
+
+
+	top += hi + 4;
+	btn1 = new PushButton(w, left, top, wid, hi);
+	btn1.title = "DiffGrayEffect";
+	btn1.visible = 1;
+	btn1.mouseClick = function () {  DoDiffGrayEff(); };
+
+	top += hi + 4;
+	btn1 = new PushButton(w, left, top, wid, hi);
+	btn1.title = "DiffNoiseEffect";
+	btn1.visible = 1;
+	btn1.mouseClick = function () {  DoDiffNoiseEff(); };
+
+	top += hi + 4;
+	btn1 = new PushButton(w, left, top, wid, hi);
+	btn1.title = "DiffStreakEffect";
+	btn1.visible = 1;
+	btn1.mouseClick = function () {  DoDiffStreakEff(); };
+
+	top += hi + 4;
+	btn1 = new PushButton(w, left, top, wid, hi);
+	btn1.title = "DiffStreakTrailColorEffect";
+	btn1.visible = 1;
+	btn1.mouseClick = function () {  DoDiffStreakTrailColorEff(); };
+
+	top += hi + 4;
+	btn1 = new PushButton(w, left, top, wid, hi);
+	btn1.title = "DiffTrailColorEffect";
+	btn1.visible = 1;
+	btn1.mouseClick = function () {  DoDiffTrailColorEff(); };
+
+	top += hi + 4;
+	btn1 = new PushButton(w, left, top, wid, hi);
+	btn1.title = "DiffTrailEffect";
+	btn1.visible = 1;
+	btn1.mouseClick = function () {  DoDiffTrailEff(); };
+
+	w.show();
+
+	this.resetReport();}
+
+ControlWin.prototype.resetReport = function(report)  {
+	this.frameCount = 0;	this.startTime = GetCurrentEventTime();	this.lastNow = this.startTime;}ControlWin.prototype.issueReport =  function(report) {
+	this.frameCount++;	var now2 = GetCurrentEventTime();	var lapse = now2 - this.startTime;	var fps = this. frameCount / lapse ;			if (this.win != undefined && (now2 - this.lastNow) > 1.0 )	{		lapse = Math.round( lapse * 100 ) / 100;		fps = Math.round( fps * 100 ) / 100;		//report_win.ctl1.title = "Lapse "+lapse+" Frame "+frameCount+" Fps "+fps;		this.win.fps.title = " FPS: "+fps;		this.lastNow = now2;	}}
+
+
+var controlWin = new ControlWin();
+controlWin.resetReport();
+
+var effArray = new Array();
+
+// ---------------------------------------------------------------------------------------
+function CameraEff() {
+	this.proj2 = new Projector();		// Project simply copies input to output	this.proj2.input = img;	this.proj2.output = win2;}
+CameraEff.prototype.process = function () {
+	this.proj2.process();}
+camEff = new CameraEff();
+
+function DoCameraEff() {
+	controlWin.resetReport();
+	procEff = camEff;
+}
+effArray.push( DoCameraEff);
+
+procEff = camEff;
+
+// ---------------------------------------------------------------------------------------
+function DelayEff() {
+	this.img2 = new Image(w, h);		// Create image buffer for the effect
+	this.eff = new DelayEffect(); 		
+	this.eff.input = img;				this.eff.output = this.img2;
+	this.eff.delay = 10;
+
+	this.proj2 = new Projector();		// Project simply copies input to output	this.proj2.input = this.img2;	this.proj2.output = win2;}
+DelayEff.prototype.process = function () {
+	this.eff.process();
+	this.proj2.process();}
+delayEff = new DelayEff();
+
+function DoDelayEff() {
+	controlWin.resetReport();
+	procEff = delayEff;
+	delayEff.eff.delay = 10;
+}
+effArray.push( DoDelayEff);
+
+function DoDelayEff2() {
+	controlWin.resetReport();
+	procEff = delayEff;
+	delayEff.eff.delay = 40;
+}
+effArray.push( DoDelayEff2);
+// ---------------------------------------------------------------------------------------
+function ConvolveEff()  {
+	this.img2 = new Image(w, h);		// Create image buffer for the effect	this.img3 = new Image(w, h);		// Create image buffer for the effect	this.eff = new ConvolveEffect(); // Effect: The image difference is colorized	this.eff.input = this.img2;			// The image from the movie is feed to the effect	this.eff.output = this.img3;	this.eff2 = new DiffTrailColorEffect(); // DiffTrailEffect -- The image difference is left as a trail	this.eff2.input = img;	this.eff2.output = this.img2;	this.eff2.diffTolerance = 40	this.eff2.color = color_int;	this.proj2 = new Projector();		// Project simply copies input to output	this.proj2.input = this.img3;	this.proj2.output = win2;	this.proj3 = new Projector();		// Project simply copies input to output	this.proj3.input = this.img3;	this.proj3.output = this.img2;
+}
+ConvolveEff.prototype.process = function () {
+	this.eff2.process();	this.eff.process();	this.proj2.process();	this.proj3.process();
+}
+
+convEff = new ConvolveEff();
+
+function DoConvolveEff() {
+	controlWin.resetReport();
+	procEff = convEff;
+}
+effArray.push( DoConvolveEff);
+
+// ---------------------------------------------------------------------------------------
+function DiffEff() {
+	this.img2 = new Image(w, h);		// Create image buffer for the effect
+	this.eff = new DiffEffect(); 		
+	this.eff.input = img;				this.eff.output = this.img2;
+
+	this.proj2 = new Projector();		// Project simply copies input to output	this.proj2.input = this.img2;	this.proj2.output = win2;}
+DiffEff.prototype.process = function () {
+	this.eff.process();
+	this.proj2.process();}
+diffEff = new DiffEff();
+
+function DoDiffEff() {
+	controlWin.resetReport();
+	procEff = diffEff;
+}
+effArray.push( DoDiffEff);
+
+// ---------------------------------------------------------------------------------------
+function DiffGrayEff() {
+	this.img2 = new Image(w, h);		// Create image buffer for the effect
+	this.eff = new DiffGrayEffect(); 		
+	this.eff.input = img;				this.eff.output = this.img2;
+
+	this.proj2 = new Projector();		// Project simply copies input to output	this.proj2.input = this.img2;	this.proj2.output = win2;}
+DiffGrayEff.prototype.process = function () {
+	this.eff.process();
+	this.proj2.process();}
+diffGrayEff = new DiffGrayEff();
+
+function DoDiffGrayEff() {
+	controlWin.resetReport();
+	procEff = diffGrayEff;
+}
+effArray.push( DoDiffGrayEff);
+
+// ---------------------------------------------------------------------------------------
+function DiffNoiseEff() {
+	this.img2 = new Image(w, h);		// Create image buffer for the effect
+	this.eff = new DiffNoiseEffect(); 		
+	this.eff.input = img;				this.eff.output = this.img2;
+
+	this.proj2 = new Projector();		// Project simply copies input to output	this.proj2.input = this.img2;	this.proj2.output = win2;}
+DiffNoiseEff.prototype.process = function () {
+	this.eff.process();
+	this.proj2.process();}
+diffNoiseEff = new DiffNoiseEff();
+
+function DoDiffNoiseEff() {
+	controlWin.resetReport();
+	procEff = diffNoiseEff;
+}
+effArray.push( DoDiffNoiseEff);
+// ---------------------------------------------------------------------------------------
+function DiffStreakEff() {
+	this.img2 = new Image(w, h);		// Create image buffer for the effect
+	this.eff = new DiffStreakEffect(); 		
+	this.eff.input = img;				this.eff.output = this.img2;
+
+	this.proj2 = new Projector();		// Project simply copies input to output	this.proj2.input = this.img2;	this.proj2.output = win2;}
+DiffStreakEff.prototype.process = function () {
+	this.eff.process();
+	this.proj2.process();}
+diffStreakEff = new DiffStreakEff();
+
+function DoDiffStreakEff() {
+	controlWin.resetReport();
+	procEff = diffStreakEff;
+}
+effArray.push( DoDiffStreakEff);
+
+// ---------------------------------------------------------------------------------------
+function DiffStreakTrailColorEff() {
+	this.img2 = new Image(w, h);		// Create image buffer for the effect
+	this.eff = new DiffStreakTrailColorEffect(); 		
+	this.eff.input = img;				this.eff.output = this.img2;
+	this.eff.color = color_int;
+
+	this.proj2 = new Projector();		// Project simply copies input to output	this.proj2.input = this.img2;	this.proj2.output = win2;}
+DiffStreakTrailColorEff.prototype.process = function () {
+	this.eff.process();
+	this.proj2.process();}
+diffStreakTrailColorEff = new DiffStreakTrailColorEff();
+
+function DoDiffStreakTrailColorEff() {
+	controlWin.resetReport();
+	procEff = diffStreakTrailColorEff;
+}
+effArray.push( DoDiffStreakTrailColorEff);
+
+// ---------------------------------------------------------------------------------------
+function DiffTrailColorEff() {
+	this.img2 = new Image(w, h);		// Create image buffer for the effect
+	this.eff = new DiffTrailColorEffect(); 		
+	this.eff.input = img;				this.eff.output = this.img2;
+	this.eff.color = color_int;
+
+	this.proj2 = new Projector();		// Project simply copies input to output	this.proj2.input = this.img2;	this.proj2.output = win2;}
+DiffTrailColorEff.prototype.process = function () {
+	this.eff.process();
+	this.proj2.process();}
+diffTrailColorEff = new DiffTrailColorEff();
+
+function DoDiffTrailColorEff() {
+	controlWin.resetReport();
+	procEff = diffTrailColorEff;
+}
+effArray.push( DoDiffTrailColorEff);
+
+// ---------------------------------------------------------------------------------------
+function DiffTrailEff() {
+	this.img2 = new Image(w, h);		// Create image buffer for the effect
+	this.eff = new DiffTrailEffect(); 		
+	this.eff.input = img;				this.eff.output = this.img2;
+
+	this.proj2 = new Projector();		// Project simply copies input to output	this.proj2.input = this.img2;	this.proj2.output = win2;}
+DiffTrailEff.prototype.process = function () {
+	this.eff.process();
+	this.proj2.process();}
+diffTrailEff = new DiffTrailEff();
+
+function DoDiffTrailEff() {
+	controlWin.resetReport();
+	procEff = diffTrailEff;
+}
+effArray.push( DoDiffTrailEff);
+
+// ---------------------------------------------------------------------------------------
+// Play notes via the keyboard
+
+note = new NotePlayer( 33 /*-instrumentNumber-*/, 8 /*-npoly-*/ )
+	noteVelocity = 127;	reportTime = 0.2;	// exploreInstruments	exploreInstruments = 1;	exploreInstruments = 0;	// --------------------------------------------------------------------------------function noteOn(n) {		//print( "noteOn: n="+ n );		n = mapKeyNumToNote( knum );		if (exploreInstruments)		{			note.instrument = n;			note.play( 60, noteVelocity );		}		else		{			note.play( n, noteVelocity);		}
+		var eff = effArray[ n % effArray.length ];
+		eff();	}	// --------------------------------------------------------------------------------function noteOff(n) {		n = mapKeyNumToNote( knum );		if (exploreInstruments)		{			note.play( 60, 0);		}		else		{			note.play( n, 0);		}	}			startTime = GetCurrentEventTime();	lastTime = startTime;	keyMap = Array();	kKeyUpCode = 102;	kKeyDownCode = 101;	kKeyLeftCode = 99;	kKeyRightCode = 100;	// --------------------------------------------------------------------------------function ProcessOneKeyNum( keyNum) {		playNote = 1;		switch (keyNum)		{			case kKeyUpCode:				newInst = note.instrument;				newInst++;				if (newInst > 127)				{					newInst = 0;				}				note.instrument = newInst;				break;			case kKeyDownCode:				newInst = note.instrument;				newInst--;				if (newInst < 0)				{					newInst = 127;				}				note.instrument = newInst;				break;		}		return playNote;	}	// --------------------------------------------------------------------------------function ProcessNotes() {		note.Task();		newKeyMap = Array()					GetKeys(newKeyMap);				reportNotes = "";		for (i = 0; i < 4; i++)		{			newWord = newKeyMap[i];			wordDiff = keyMap[i] ^ newWord;			keyMap[i] = newWord;			//if (wordDiff == 0)			//	continue;			for (j = 0, imask = 1; j < 32; j++, imask <<= 1)			{				if ( (wordDiff & imask) != 0)				{					knum = i*32 + j;					if (newWord & imask)					{						oldknum = knum;						if (ProcessOneKeyNum( knum))						{							noteOn( knum );						}					}					else					{						noteOff( knum);					}				}				if (newWord & imask)				{					knum = i*32 + j;					reportNotes += (knum+"("+mapKeyNumToNote( knum )+")"+" " );				}			}		}		controlWin.win.note.title =  reportNotes ;	}	// --------------------------------------------------------------------------------function spendTime2() {	ProcessNotes();}	// --------------------------------------------------------------------------------		keyLayoutAll = Array (		45, // esc		// Row 1		98,	// F1		96, // F2		123, // F3		110, // F4		120, // F5		121, // F6		122, // F7		124, // F8		125, // F9		117, // F10		127, // F11		119, // F12		113, // F13				42, // ` (Backquote)// Row 2		10, // 1		11, // 2		12, // 3		13, // 4		15, // 5		14, // 6		2, // 7		4, // 8		1, // 9		5, // 0		3, // -		0, // =		43, // DEL					40, // TAB		// Row 3		20, // Q		21, // W		22, // E		23, // R		9, // T		8, // Y		56, // U		58, // I		7, // O		59, // P		57, // [		6, // ]		50, // \				33, // caps lock	// Row 4		24, // A		25, // S		26, // D		27, // F		29, // G		28, // H		62, // J		48, // K		61, // L		49, // ;		63, // '		60, // Return						32, // Shift DUP	// Row 5		30, // Z		31, // X		16, // C		17, // V		19, // B		53, // N		54, // M		51, // ,		55, // .		52, // /		32, // shift					35, // CONTROL DUP		// Row 6		34, // OPTION DUP		47, // APPLE DUP		41, // SPACE		47, // APPLE DUP		34, // OPTION DUP		35, // CONTROL DUP				115, // F14			// Row 1, middle bank -----------------		105, // F15		114, // F16				106, // HELP		// Row 2, middle bank		107, // HOME		108, // PG UP		109, // DEL			// Row 3, middle bank		111, // END		97, // PG DN		102, // up			// Row 5, middle bank				99, // LEFT 			// Row 6, middle bank		101, // DOWN		100, // RIGHT				95, // CLR			// Row 2, right bank -----------------		73, // =		83, // / (slash)		91, // * (star)		65, // 7	// Row 3, right bank		67, // 8		68, // 9		86, // -				78, // 4	// Row 4, right bank		79, // 5		64, // 6		93, // +				75, // 1			// Row 5, right bank		76, // 2		77, // 3		84, // ENTER		74,	// 0			// Row 6, right bank		89 // .				);	// --------------------------------------------------------------------------------	keyNumToRemap = Array(		45, // esc		// Row 1		98,	// F1		96, // F2		123, // F3		110, // F4		120, // F5		121, // F6		122, // F7		124, // F8		125, // F9		117, // F10		127, // F11		119, // F12		113, // F13				42, // ` (Backquote)// Row 2		10, // 1		11, // 2		12, // 3		13, // 4		15, // 5		14, // 6		2, // 7		4, // 8		1, // 9		5, // 0		3, // -		0, // =		43, // DEL					40, // TAB		// Row 3		20, // Q		21, // W		22, // E		23, // R		9, // T		8, // Y		56, // U		58, // I		7, // O		59, // P		57, // [		6, // ]		50, // \				33, // caps lock	// Row 4		24, // A		25, // S		26, // D		27, // F		29, // G		28, // H		62, // J		48, // K		61, // L		49, // ;		63, // '		60, // Return						32, // Shift DUP	// Row 5		30, // Z		31, // X		16, // C		17, // V		19, // B		53, // N		54, // M		51, // ,		55, // .		52, // /		32 // shift		 );	// --------------------------------------------------------------------------------function mapKeyNumToNote( num )	{		return remapKeys[ num ] ;	}	// --------------------------------------------------------------------------------		remapKeys = Array();	function setupKeyRemap()	{		for (i = 0; i < 128; i++)			remapKeys[i] = i;		n = keyNumToRemap.length;		startNote = 36;		for (i = 0; i < n; i++, startNote++)			remapKeys[ keyNumToRemap[i] ] = startNote;	}		setupKeyRemap();		// --------------------------------------------------------------------------------	// --------------------------------------------------------------------------------	
+
+// ---------------------------------------------------------------------------------------
+processThem();
+
+// ---------------------------------------------------------------------------------------
+// ---------------------------------------------------------------------------------------
+

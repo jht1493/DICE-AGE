@@ -1,0 +1,1 @@
+/*2005.02.16	jht*/#pragma once#include "CEditItem.h"class CExecuteItem : public CEditItem{public:	virtual void 			ExecuteScript() = 0;};

@@ -1,0 +1,250 @@
+
+2006-10-12
+[] Fix beep when no key focus
+
+2006-09-18 Mon
+[] Overlay text input on processed video
+
+2006-09-17 Sun
+[] Buttons for all effects
+[] Simple Motion detection
+
+2006-09-03 Sun
+[] Enhance effect. offset, multiplier.
+
+2006-08-29 Tue
+[] "Be Still" mini-app. Opening text needed.
+
+2006-08-27 Sun
+[] Have Camera/Movie kick of frame ready event.
+
+2006-08-25
+[] redirect all fprintf etc. in js to window
+	search for <stdio.h> in js
+	
+2006-08-21
+[x] Set text file type to app. consider retiring outline view.
+	double click text file to run it. (2006-08-2?)
+- consider external editor
+[] Copy sub-rect in Projector
+[] obj arg to all constructors, so args are named. OR funcs with > 1 args
+
+2006-08-26 Sat
+[x] Dx* converted to xcode 
+
+2006-08-25
+[x] js hookedup in xcode
+
+2006.08.10 - 2006.08.21
+[x] addFrame to MovieMaker
+[x] Get movie info width, height
+[x] save to file name
+
+2006.08.07
+[x] color trails on conv
+[x] conv into second image, copy to first
+
+------- Do Essential First - Simplicity to Power ----------
+
+[] JS wrapper for all 23 effects
+
+[] Subtract effect. input, input2, output, Remove-the-Background effect
+
+[] DiffStreak, add oncolor (now black)
+[] diffTolerance -> tolerance
+[] Consider float for Color.
+[] Fix crash 2x run effects, then gc()
+
+[] Camera : use DxImage for output, return as value
+
+[x] PlayMovieFile
+
+[] ColorKeyEffect
+	input, 
+	input2, 
+	output, 
+	keyColor, 
+	tolerance
+
+[] Draw text api (support sing-along)
+
+[] Full screen mode
+
+[] Draw shape api
+
+[] JS UI radio, check box, editable field
+[] Use native calls for UI elements
+
+[] Grab sound sample
+
+[] Tab management of window
+
+[] Port to Windows XP
+
+[] consider live notebook form.
+	
+[] Build up JS debugger.
+
+[] Define Documentation strategy
+	Consider Note book, live example to try out and document effects
+	promote sharing of work too!
+	Use outline and tabs, learn from Mathematica
+
+[] Scrolling text demo
+
+?? How to get Capoiera into DICE
+	[] chick-dig-dong-dong
+	[] Calc & Display difference between live and canned movement
+	
+[] Special syntax in text script to create UI
+	parsed by JS!
+%Window Name "Control"
+	%Button OK playMovie()
+	%TextField "100" rate
+
+[] Easy threads
+
+++ 2005.02.13 -------------------------
+
+[x] Provide js interface to GetKeys, have JS do all keyboard firing.
+and instrument selection.
+
+
+++ 2004.12.17 -------------------------
+
+Level 1: Direct firing of image and sound
+Level 2: Simple UI
+Level 3: Scripting interface. Use JavaScript until Phyton get easier to embed
+
+Get on Windows soon.
+
+
+
+++ 2004.12.29 -------------------------
+Direct-Immediate-Computed-Exploration
+Digital Instrument for Computed Expression
+
+Full Screen
+Build UI from QuickDraw graphics.
+Dynamic ui: fades, movement on, music
+	visual and audio transitions.
+
+
+++ 2004.12.21 -------------------------
+Got CW9 for Mac and Windows and Visual C++/C#
+Struggling with what is the right priority.
+
+Version 1.0
+Decent Java script editor
+API for music, text drawing, video effects
+? Debugger
+Windows & Mac
+
+2004.12.17 -------------------------
+
+Level 1: Direct firing of image and sound
+Level 2: Simple UI
+Level 3: Scripting interface. Use JavaScript until Phyton get easier to embed
+
+Ge on Windows soon.
+
+2003.--.-- -------------------------
+
+
+The Dice Application
+	Word sayer. C A T scrolls by and it says "cat"
+	get at text out time
+	programmatic access to all interesting visual and audio data.
+	
+	Sound looper. Record and playback on keyboard.
+	
+	DICE: exposing the underling power of the desktop computer.
+	A learning platform.
+	
+DICE play ground
+	real time video
+	music notes
+	speech
+	rendered text
+	paint
+	3-d
+	programming
+
+
+Demo Release
+	To Do
+	Control window
+	[] Gray Color cycle
+	[] Save Screen vs. save buffer.
+
+New Effects
+	[] Edge Tracker
+	[] Moving Avg Shadow
+	[] Line map w/ effects
+	[] Scroll
+	[] Wipes
+
+	
+Code Organization
+	[] Effects Class
+	[] Effects tab interface
+
+Bugs
+	[] 
+	
+Python
+	[] Read language
+	[] Speed test
+	[] Integrate??
+
+Box Loop 
+	[] Random walk
+	[] Plus Walk
+	[] Patterns
+
+
+Directions
+	Memory Loops
+	Layering of Effects
+	Color control
+	Sequence Control
+	UI
+	HTML as a Plugin
+	Director as an xtra
+	Emulate Flash
+
+====================== Done =================
+
+2003.03.10
+[x] Update to CW 7.0. Developing under Mac OS X.
+	Debugger not working reliable. Ordered CW 8.0
+	
+2003.03.12
+[x] Windows overdraw. Related to use of Appearance Manager, and offscreen capture gworld.
+
+2001.01.24-
+[x] Loop speeds
+[x] Left-right-Top-to-bottom
+[x] Avg param
+[x] Time Bomb
+[x] 3x3 Conv
+[x] 8-bit Conv w/ Rainbow palette
+
+2001.07.24
+[01.07.24] Palette popup
+Updated to QT5.0.2
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+

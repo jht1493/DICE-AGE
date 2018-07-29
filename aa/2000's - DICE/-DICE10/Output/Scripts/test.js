@@ -1,0 +1,1 @@
+// Simple test of displaying Digitizing Cameram = new Image();c = new Camera(m);w = new Window(20, 80, 640, 480);w.show();p = new Projector();p.input = m;p.output = w;function processThem(){	c.process();	p.process();}function spendTime(){	processThem();}

@@ -1,0 +1,113 @@
+// !$*UTF8*$!
+{
+	29B97313FDCFA39411CA2CEA /* Project object */ = {
+		activeBuildConfigurationName = Debug;
+		activeExecutable = A5BC41900F42B13C00C916B3 /* MyRecorder */;
+		activeTarget = 8D1107260486CEB800E47090 /* MyRecorder */;
+		codeSenseManager = A5BC41D70F42B14500C916B3 /* Code sense */;
+		executables = (
+			A5BC41900F42B13C00C916B3 /* MyRecorder */,
+		);
+		perUserDictionary = {
+			PBXConfiguration.PBXFileTableDataSource3.PBXFileTableDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					727,
+					20,
+					48,
+					43,
+					43,
+					20,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+					PBXFileDataSource_Target_ColumnID,
+				);
+			};
+			PBXPerProjectTemplateStateSaveDate = 256101717;
+			PBXWorkspaceStateSaveDate = 256101717;
+		};
+		perUserProjectItems = {
+			A5629A0A0F43CD750048CC91 /* PBXTextBookmark */ = A5629A0A0F43CD750048CC91 /* PBXTextBookmark */;
+			A5BC41DF0F42B24300C916B3 /* PBXTextBookmark */ = A5BC41DF0F42B24300C916B3 /* PBXTextBookmark */;
+		};
+		sourceControlManager = A5BC41D60F42B14500C916B3 /* Source Control */;
+		userBuildSettings = {
+		};
+	};
+	8D1107260486CEB800E47090 /* MyRecorder */ = {
+		activeExec = 0;
+		executables = (
+			A5BC41900F42B13C00C916B3 /* MyRecorder */,
+		);
+	};
+	A5629A0A0F43CD750048CC91 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C5E698F20BA8735700382716 /* MyRecorderController.m */;
+		name = "MyRecorderController.m: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 1176;
+		vrLoc = 2469;
+	};
+	A5BC41900F42B13C00C916B3 /* MyRecorder */ = {
+		isa = PBXExecutable;
+		activeArgIndices = (
+		);
+		argumentStrings = (
+		);
+		autoAttachOnCrash = 1;
+		breakpointsEnabled = 0;
+		configStateDict = {
+		};
+		customDataFormattersEnabled = 1;
+		debuggerPlugin = GDBDebugging;
+		disassemblyDisplayState = 0;
+		dylibVariantSuffix = "";
+		enableDebugStr = 1;
+		environmentEntries = (
+		);
+		executableSystemSymbolLevel = 0;
+		executableUserSymbolLevel = 0;
+		libgmallocEnabled = 0;
+		name = MyRecorder;
+		sourceDirectories = (
+		);
+	};
+	A5BC41D60F42B14500C916B3 /* Source Control */ = {
+		isa = PBXSourceControlManager;
+		fallbackIsa = XCSourceControlManager;
+		isSCMEnabled = 0;
+		scmConfiguration = {
+		};
+	};
+	A5BC41D70F42B14500C916B3 /* Code sense */ = {
+		isa = PBXCodeSenseManager;
+		indexTemplatePath = "";
+	};
+	A5BC41DF0F42B24300C916B3 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C5E698F20BA8735700382716 /* MyRecorderController.m */;
+		name = "MyRecorderController.m: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 1321;
+		vrLoc = 6256;
+	};
+	C5E698F20BA8735700382716 /* MyRecorderController.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1110, 2954}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{2469, 1176}";
+		};
+	};
+}

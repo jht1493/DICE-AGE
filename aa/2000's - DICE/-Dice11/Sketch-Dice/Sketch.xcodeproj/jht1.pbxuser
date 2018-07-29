@@ -1,0 +1,137 @@
+// !$*UTF8*$!
+{
+	0A3ECED7FE888A39C02AAC07 /* Project object */ = {
+		activeBuildConfigurationName = Development;
+		activeExecutable = 283A75D40A9BBFB90058C893 /* Sketch */;
+		activeTarget = 38D54A3507D51A2A00514CB8 /* Sketch */;
+		codeSenseManager = 283A75E30A9BBFD80058C893 /* Code sense */;
+		executables = (
+			283A75D40A9BBFB90058C893 /* Sketch */,
+		);
+		perUserDictionary = {
+			PBXConfiguration.PBXFileTableDataSource3.PBXFileTableDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					578,
+					20,
+					48,
+					43,
+					43,
+					20,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+					PBXFileDataSource_Target_ColumnID,
+				);
+			};
+			PBXConfiguration.PBXTargetDataSource.PBXTargetDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					200,
+					398,
+					20,
+					48,
+					43,
+					43,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXTargetDataSource_PrimaryAttribute,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+				);
+			};
+			PBXPerProjectTemplateStateSaveDate = 180318138;
+			PBXWorkspaceStateSaveDate = 180318138;
+		};
+		sourceControlManager = 283A75E20A9BBFD80058C893 /* Source Control */;
+		userBuildSettings = {
+		};
+	};
+	0A3ECEE3FE888A39C02AAC07 /* SKTDrawAppDelegate.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {844, 700}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRect = "{{0, 0}, {844, 569}}";
+			sepNavWindowFrame = "{{15, 43}, {883, 698}}";
+		};
+	};
+	0A3ECF18FE888A39C02AAC07 /* SKTDrawDocument.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {2606, 13202}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRect = "{{0, 7267}, {844, 569}}";
+			sepNavWindowFrame = "{{15, 43}, {883, 698}}";
+		};
+	};
+	0A3ECF1DFE888A39C02AAC07 /* SKTTextArea.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1562, 5292}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRect = "{{0, 3354}, {844, 569}}";
+			sepNavWindowFrame = "{{15, 43}, {883, 698}}";
+		};
+	};
+	0A3ECF21FE888A39C02AAC07 /* SKTDrawDocument.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {844, 1022}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRect = "{{0, 453}, {844, 569}}";
+			sepNavWindowFrame = "{{15, 43}, {883, 698}}";
+		};
+	};
+	283A75D40A9BBFB90058C893 /* Sketch */ = {
+		isa = PBXExecutable;
+		activeArgIndex = 2147483647;
+		activeArgIndices = (
+		);
+		argumentStrings = (
+		);
+		autoAttachOnCrash = 1;
+		configStateDict = {
+		};
+		customDataFormattersEnabled = 1;
+		debuggerPlugin = GDBDebugging;
+		disassemblyDisplayState = 0;
+		dylibVariantSuffix = "";
+		enableDebugStr = 1;
+		environmentEntries = (
+		);
+		executableSystemSymbolLevel = 0;
+		executableUserSymbolLevel = 0;
+		libgmallocEnabled = 0;
+		name = Sketch;
+		sourceDirectories = (
+		);
+	};
+	283A75E20A9BBFD80058C893 /* Source Control */ = {
+		isa = PBXSourceControlManager;
+		fallbackIsa = XCSourceControlManager;
+		isSCMEnabled = 0;
+		scmConfiguration = {
+		};
+		scmType = "";
+	};
+	283A75E30A9BBFD80058C893 /* Code sense */ = {
+		isa = PBXCodeSenseManager;
+		indexTemplatePath = "";
+	};
+	38D54A3507D51A2A00514CB8 /* Sketch */ = {
+		activeExec = 0;
+		executables = (
+			283A75D40A9BBFB90058C893 /* Sketch */,
+		);
+	};
+}

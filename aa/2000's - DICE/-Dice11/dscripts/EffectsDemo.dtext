@@ -1,0 +1,302 @@
+// Convolve Effect demo
+libpath = DocPath();n = 1ww = 640; wh = 480w = ww / n; h = wh / n;	// The dimension of the imageimg = new Image(w, h);	// Create an image buffer to store frame from cameracam = new Camera();	// Create a Camera objectcam.output = img;		
+
+color_int = new Color(255,255,255)	// Color to apply to image difference
+
+win2 = new Window(20, 0, ww, wh);	// Window use to present the result of the Effectwin2.show();
+
+// ---------------------------------------------------------------------------------------// ---------------------------------------------------------------------------------------
+function processThem() {	cam.process();	
+	procEff.process();		colCycle.step();		controlWin.issueReport();}// ---------------------------------------------------------------------------------------
+function spendTime() {	processThem();}
+
+// ---------------------------------------------------------------------------------------function ColorCycle(color_int){	this.color_int = color_int;	this.color = new Array();	this.colorCycleDelta = new Array();	this.colorCycleCount = 30;	this.colorCycleIndex = 0;		var i;	for (i = 0; i < 3; i++)	{		this.colorCycleDelta[i] = 255.0 / this.colorCycleCount;		this.color[i] = 0;	}}	ColorCycle.prototype.step = function(){	var i;	for (i = 0; i < 3; i++)	{		this.color[i] += this.colorCycleDelta[i];	}	this.colorCycleIndex++;	if (this.colorCycleIndex >= this.colorCycleCount)	{		var		color_target;		for (i = 0; i < 3; i++)		{			color_target = Math.random() * 255;			this.colorCycleDelta[i] = (color_target - this.color[i]) / this.colorCycleCount;		}				this.colorCycleIndex = 0;	}	this.color_int.red = this.color[0];	this.color_int.green = this.color[1];	this.color_int.blue = this.color[2];}
+
+var colCycle = new ColorCycle(color_int);
+
+// ---------------------------------------------------------------------------------------function ControlWin() {	var w = new Window( 640+80 /*-left-*/, 0 + 20 /*-top-*/, 150 /*-width-*/, 400 /*-height-*/ );
+	this.win = w;
+	var left = 4;
+	var top = 4;
+	var wid = 120;
+	var hi = 22;
+
+	w.ctl1 = new TextField( w, left,  top, 140, 22 );
+	w.ctl1.title = "Effects  Demo"	w.ctl1.visible = 1
+
+	top += hi + 4;
+	w.ctl2 = new TextField( w, left,  top, 140, 22 );
+	w.ctl2.title = "Effects  Demo"	w.ctl2.visible = 1
+
+	top += hi + 4;
+	var btn1 = new PushButton(w, left, top, wid, hi);
+	btn1.title = "Camera";
+	btn1.visible = 1;
+	btn1.mouseClick = function () {  DoCameraEff(); };
+
+	top += hi + 4;
+	btn1 = new PushButton(w, left, top, wid, hi);
+	btn1.title = "Delay";
+	btn1.visible = 1;
+	btn1.mouseClick = function () {  DoDelayEff(); };
+
+	top += hi + 4;
+	btn1 = new PushButton(w, left, top, wid, hi);
+	btn1.title = "Delay 40";
+	btn1.visible = 1;
+	btn1.mouseClick = function () {  DoDelayEff2(); };
+
+	top += hi + 4;
+	btn1 = new PushButton(w, left, top, wid, hi);
+	btn1.title = "Delay 300";
+	btn1.visible = 1;
+	btn1.mouseClick = function () {  DoDelayEff3(); };
+
+	top += hi + 4;
+	btn1 = new PushButton(w, left, top, wid, hi);
+	btn1.title = "Convolve";
+	btn1.visible = 1;
+	btn1.mouseClick = function () {  DoConvolveEff(); };
+
+	top += hi + 4;
+	btn1 = new PushButton(w, left, top, wid, hi);
+	btn1.title = "DiffEffect";
+	btn1.visible = 1;
+	btn1.mouseClick = function () {  DoDiffEff(); };
+
+
+	top += hi + 4;
+	btn1 = new PushButton(w, left, top, wid, hi);
+	btn1.title = "DiffGrayEffect";
+	btn1.visible = 1;
+	btn1.mouseClick = function () {  DoDiffGrayEff(); };
+
+	top += hi + 4;
+	btn1 = new PushButton(w, left, top, wid, hi);
+	btn1.title = "DiffNoiseEffect";
+	btn1.visible = 1;
+	btn1.mouseClick = function () {  DoDiffNoiseEff(); };
+
+	top += hi + 4;
+	btn1 = new PushButton(w, left, top, wid, hi);
+	btn1.title = "DiffStreakEffect";
+	btn1.visible = 1;
+	btn1.mouseClick = function () {  DoDiffStreakEff(); };
+
+	top += hi + 4;
+	btn1 = new PushButton(w, left, top, wid, hi);
+	btn1.title = "DiffStreakTrailColorEffect";
+	btn1.visible = 1;
+	btn1.mouseClick = function () {  DoDiffStreakTrailColorEff(); };
+
+	top += hi + 4;
+	btn1 = new PushButton(w, left, top, wid, hi);
+	btn1.title = "DiffTrailColorEffect";
+	btn1.visible = 1;
+	btn1.mouseClick = function () {  DoDiffTrailColorEff(); };
+
+	top += hi + 4;
+	btn1 = new PushButton(w, left, top, wid, hi);
+	btn1.title = "DiffTrailEffect";
+	btn1.visible = 1;
+	btn1.mouseClick = function () {  DoDiffTrailEff(); };
+
+	w.show();
+
+	this.resetReport();}
+
+ControlWin.prototype.resetReport = function(report)  {
+	this.frameCount = 0;	this.startTime = GetCurrentEventTime();	this.lastNow = this.startTime;}ControlWin.prototype.issueReport =  function(report) {
+	this.frameCount++;	var now2 = GetCurrentEventTime();	var lapse = now2 - this.startTime;	var fps = this. frameCount / lapse ;			if (this.win != undefined && (now2 - this.lastNow) > 1.0 )	{		lapse = Math.round( lapse * 100 ) / 100;		fps = Math.round( fps * 100 ) / 100;		//report_win.ctl1.title = "Lapse "+lapse+" Frame "+frameCount+" Fps "+fps;		this.win.ctl2.title = " FPS: "+fps;		this.lastNow = now2;	}}
+
+var controlWin = new ControlWin();
+controlWin.resetReport();
+
+// ---------------------------------------------------------------------------------------
+function CameraEff() {
+	this.proj2 = new Projector();		// Project simply copies input to output	this.proj2.input = img;	this.proj2.output = win2;}
+CameraEff.prototype.process = function () {
+	this.proj2.process();}
+camEff = new CameraEff();
+
+function DoCameraEff() {
+	controlWin.resetReport();
+	procEff = camEff;
+}
+
+procEff = camEff;
+
+// ---------------------------------------------------------------------------------------
+function DelayEff() {
+	this.img2 = new Image(w, h);		// Create image buffer for the effect
+	this.eff = new DelayEffect(); 		
+	this.eff.input = img;				this.eff.output = this.img2;
+	this.eff.delay = 10;
+
+	this.proj2 = new Projector();		// Project simply copies input to output	this.proj2.input = this.img2;	this.proj2.output = win2;}
+DelayEff.prototype.process = function () {
+	this.eff.process();
+	this.proj2.process();}
+delayEff = new DelayEff();
+
+function DoDelayEff() {
+	controlWin.resetReport();
+	procEff = delayEff;
+	delayEff.eff.delay = 10;
+}
+
+function DoDelayEff2() {
+	controlWin.resetReport();
+	procEff = delayEff;
+	delayEff.eff.delay = 40;
+}
+
+function DoDelayEff3() {
+	controlWin.resetReport();
+	procEff = delayEff;
+	delayEff.eff.delay = 300;
+}
+// ---------------------------------------------------------------------------------------
+function ConvolveEff()  {
+	this.img2 = new Image(w, h);		// Create image buffer for the effect	this.img3 = new Image(w, h);		// Create image buffer for the effect	this.eff = new ConvolveEffect(); // Effect: The image difference is colorized	this.eff.input = this.img2;			// The image from the movie is feed to the effect	this.eff.output = this.img3;	this.eff2 = new DiffTrailColorEffect(); // DiffTrailEffect -- The image difference is left as a trail	this.eff2.input = img;	this.eff2.output = this.img2;	this.eff2.diffTolerance = 40	this.eff2.color = color_int;	this.proj2 = new Projector();		// Project simply copies input to output	this.proj2.input = this.img3;	this.proj2.output = win2;	this.proj3 = new Projector();		// Project simply copies input to output	this.proj3.input = this.img3;	this.proj3.output = this.img2;
+}
+ConvolveEff.prototype.process = function () {
+	this.eff2.process();	this.eff.process();	this.proj2.process();	this.proj3.process();
+}
+
+convEff = new ConvolveEff();
+
+function DoConvolveEff() {
+	controlWin.resetReport();
+	procEff = convEff;
+}
+
+// ---------------------------------------------------------------------------------------
+function DiffEff() {
+	this.img2 = new Image(w, h);		// Create image buffer for the effect
+	this.eff = new DiffEffect(); 		
+	this.eff.input = img;				this.eff.output = this.img2;
+
+	this.proj2 = new Projector();		// Project simply copies input to output	this.proj2.input = this.img2;	this.proj2.output = win2;}
+DiffEff.prototype.process = function () {
+	this.eff.process();
+	this.proj2.process();}
+diffEff = new DiffEff();
+
+function DoDiffEff() {
+	controlWin.resetReport();
+	procEff = diffEff;
+}
+
+// ---------------------------------------------------------------------------------------
+function DiffGrayEff() {
+	this.img2 = new Image(w, h);		// Create image buffer for the effect
+	this.eff = new DiffGrayEffect(); 		
+	this.eff.input = img;				this.eff.output = this.img2;
+
+	this.proj2 = new Projector();		// Project simply copies input to output	this.proj2.input = this.img2;	this.proj2.output = win2;}
+DiffGrayEff.prototype.process = function () {
+	this.eff.process();
+	this.proj2.process();}
+diffGrayEff = new DiffGrayEff();
+
+function DoDiffGrayEff() {
+	controlWin.resetReport();
+	procEff = diffGrayEff;
+}
+
+// ---------------------------------------------------------------------------------------
+function DiffNoiseEff() {
+	this.img2 = new Image(w, h);		// Create image buffer for the effect
+	this.eff = new DiffNoiseEffect(); 		
+	this.eff.input = img;				this.eff.output = this.img2;
+
+	this.proj2 = new Projector();		// Project simply copies input to output	this.proj2.input = this.img2;	this.proj2.output = win2;}
+DiffNoiseEff.prototype.process = function () {
+	this.eff.process();
+	this.proj2.process();}
+diffNoiseEff = new DiffNoiseEff();
+
+function DoDiffNoiseEff() {
+	controlWin.resetReport();
+	procEff = diffNoiseEff;
+}
+// ---------------------------------------------------------------------------------------
+function DiffStreakEff() {
+	this.img2 = new Image(w, h);		// Create image buffer for the effect
+	this.eff = new DiffStreakEffect(); 		
+	this.eff.input = img;				this.eff.output = this.img2;
+
+	this.proj2 = new Projector();		// Project simply copies input to output	this.proj2.input = this.img2;	this.proj2.output = win2;}
+DiffStreakEff.prototype.process = function () {
+	this.eff.process();
+	this.proj2.process();}
+diffStreakEff = new DiffStreakEff();
+
+function DoDiffStreakEff() {
+	controlWin.resetReport();
+	procEff = diffStreakEff;
+}
+
+// ---------------------------------------------------------------------------------------
+function DiffStreakTrailColorEff() {
+	this.img2 = new Image(w, h);		// Create image buffer for the effect
+	this.eff = new DiffStreakTrailColorEffect(); 		
+	this.eff.input = img;				this.eff.output = this.img2;
+	this.eff.color = color_int;
+
+	this.proj2 = new Projector();		// Project simply copies input to output	this.proj2.input = this.img2;	this.proj2.output = win2;}
+DiffStreakTrailColorEff.prototype.process = function () {
+	this.eff.process();
+	this.proj2.process();}
+diffStreakTrailColorEff = new DiffStreakTrailColorEff();
+
+function DoDiffStreakTrailColorEff() {
+	controlWin.resetReport();
+	procEff = diffStreakTrailColorEff;
+}
+
+// ---------------------------------------------------------------------------------------
+function DiffTrailColorEff() {
+	this.img2 = new Image(w, h);		// Create image buffer for the effect
+	this.eff = new DiffTrailColorEffect(); 		
+	this.eff.input = img;				this.eff.output = this.img2;
+	this.eff.color = color_int;
+
+	this.proj2 = new Projector();		// Project simply copies input to output	this.proj2.input = this.img2;	this.proj2.output = win2;}
+DiffTrailColorEff.prototype.process = function () {
+	this.eff.process();
+	this.proj2.process();}
+diffTrailColorEff = new DiffTrailColorEff();
+
+function DoDiffTrailColorEff() {
+	controlWin.resetReport();
+	procEff = diffTrailColorEff;
+}
+
+// ---------------------------------------------------------------------------------------
+function DiffTrailEff() {
+	this.img2 = new Image(w, h);		// Create image buffer for the effect
+	this.eff = new DiffTrailEffect(); 		
+	this.eff.input = img;				this.eff.output = this.img2;
+
+	this.proj2 = new Projector();		// Project simply copies input to output	this.proj2.input = this.img2;	this.proj2.output = win2;}
+DiffTrailEff.prototype.process = function () {
+	this.eff.process();
+	this.proj2.process();}
+diffTrailEff = new DiffTrailEff();
+
+function DoDiffTrailEff() {
+	controlWin.resetReport();
+	procEff = diffTrailEff;
+}
+
+// ---------------------------------------------------------------------------------------
+
+
+// ---------------------------------------------------------------------------------------
+processThem();
+
+// ---------------------------------------------------------------------------------------
+// ---------------------------------------------------------------------------------------
+

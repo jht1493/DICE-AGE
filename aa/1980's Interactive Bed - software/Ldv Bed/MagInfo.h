@@ -1,0 +1,1 @@
+typedef struct MagInfo	{	short	oddComp;	short	stripOffset;	short	nfields;	short	nlines;	short	startLine;	short	highCut;	short	lowCut;	Byte	*dest;	BitMap	bits;	}	MagInfo;	

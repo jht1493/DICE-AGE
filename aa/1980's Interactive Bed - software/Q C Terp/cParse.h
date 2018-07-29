@@ -1,0 +1,1 @@
+/* CI Parser definitions.*/enum {	BadChar = 1,	WhiteChar,	SymbolChar,	OpChar	};	

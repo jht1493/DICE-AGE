@@ -1,0 +1,1 @@
+#define kBOMB_YEAR 		2001#define kBOMB_MONTH		8#define kBOMB_DAY		31#define kDoBomb 		0int	TimeBomb();

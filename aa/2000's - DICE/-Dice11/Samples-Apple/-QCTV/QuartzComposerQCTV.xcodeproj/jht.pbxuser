@@ -1,0 +1,188 @@
+// !$*UTF8*$!
+{
+	29B97313FDCFA39411CA2CEA /* Project object */ = {
+		activeBuildConfigurationName = Debug;
+		activeExecutable = A5BC41F30F4385A500C916B3 /* QuartzComposerTV */;
+		activeTarget = 8D1107260486CEB800E47090 /* QuartzComposerTV */;
+		codeSenseManager = A5BC42070F4385BA00C916B3 /* Code sense */;
+		executables = (
+			A5BC41F30F4385A500C916B3 /* QuartzComposerTV */,
+		);
+		perUserDictionary = {
+			PBXConfiguration.PBXFileTableDataSource3.PBXFileTableDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					341,
+					20,
+					48,
+					43,
+					43,
+					20,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+					PBXFileDataSource_Target_ColumnID,
+				);
+			};
+			PBXPerProjectTemplateStateSaveDate = 256088162;
+			PBXWorkspaceStateSaveDate = 256088162;
+		};
+		perUserProjectItems = {
+			A56299360F43990A0048CC91 /* PBXBookmark */ = A56299360F43990A0048CC91 /* PBXBookmark */;
+			A56299370F439A9E0048CC91 /* PlistBookmark */ = A56299370F439A9E0048CC91 /* PlistBookmark */;
+			A56299380F439A9E0048CC91 /* PlistBookmark */ = A56299380F439A9E0048CC91 /* PlistBookmark */;
+			A56299390F439A9E0048CC91 /* PBXBookmark */ = A56299390F439A9E0048CC91 /* PBXBookmark */;
+			A562993A0F439A9E0048CC91 /* PlistBookmark */ = A562993A0F439A9E0048CC91 /* PlistBookmark */;
+			A562993B0F439A9E0048CC91 /* PlistBookmark */ = A562993B0F439A9E0048CC91 /* PlistBookmark */;
+			A562993C0F439A9E0048CC91 /* PlistBookmark */ = A562993C0F439A9E0048CC91 /* PlistBookmark */;
+			A562993D0F439A9E0048CC91 /* PlistBookmark */ = A562993D0F439A9E0048CC91 /* PlistBookmark */;
+			A56299400F439A9E0048CC91 /* PlistBookmark */ = A56299400F439A9E0048CC91 /* PlistBookmark */;
+		};
+		sourceControlManager = A5BC42060F4385BA00C916B3 /* Source Control */;
+		userBuildSettings = {
+		};
+	};
+	8436335D0846A46300DABC99 /* Background.qtz */ = {
+		uiCtxt = {
+			sepNavWindowFrame = "{{38, 88}, {1098, 764}}";
+		};
+	};
+	843633600846A46400DABC99 /* Image.qtz */ = {
+		uiCtxt = {
+			sepNavWindowFrame = "{{15, 109}, {1098, 764}}";
+		};
+	};
+	8D1107260486CEB800E47090 /* QuartzComposerTV */ = {
+		activeExec = 0;
+		executables = (
+			A5BC41F30F4385A500C916B3 /* QuartzComposerTV */,
+		);
+	};
+	A56299360F43990A0048CC91 /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = 843634C80846F5B600DABC99 /* Contents.qtz */;
+	};
+	A56299370F439A9E0048CC91 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 8436335D0846A46300DABC99 /* Background.qtz */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+		);
+		name = "/Developer/Examples/Quartz Composer/Applications/-QCTV/Compositions/Background.qtz";
+		rLen = 0;
+		rLoc = 2147483647;
+	};
+	A56299380F439A9E0048CC91 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 843633600846A46400DABC99 /* Image.qtz */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+		);
+		name = "/Developer/Examples/Quartz Composer/Applications/-QCTV/Compositions/Image.qtz";
+		rLen = 0;
+		rLoc = 2147483647;
+	};
+	A56299390F439A9E0048CC91 /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = 843634C80846F5B600DABC99 /* Contents.qtz */;
+	};
+	A562993A0F439A9E0048CC91 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 843633600846A46400DABC99 /* Image.qtz */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+		);
+		name = "/Developer/Examples/Quartz Composer/Applications/-QCTV/Compositions/Image.qtz";
+		rLen = 0;
+		rLoc = 2147483647;
+	};
+	A562993B0F439A9E0048CC91 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 8436335D0846A46300DABC99 /* Background.qtz */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+		);
+		name = "/Developer/Examples/Quartz Composer/Applications/-QCTV/Compositions/Background.qtz";
+		rLen = 0;
+		rLoc = 2147483647;
+	};
+	A562993C0F439A9E0048CC91 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 843633600846A46400DABC99 /* Image.qtz */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+		);
+		name = "/Developer/Examples/Quartz Composer/Applications/-QCTV/Compositions/Image.qtz";
+		rLen = 0;
+		rLoc = 2147483647;
+	};
+	A562993D0F439A9E0048CC91 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 843634C80846F5B600DABC99 /* Contents.qtz */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+		);
+		name = "/Developer/Examples/Quartz Composer/Applications/-QCTV/Compositions/Contents.qtz";
+		rLen = 0;
+		rLoc = 2147483647;
+	};
+	A56299400F439A9E0048CC91 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 843634C80846F5B600DABC99 /* Contents.qtz */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+		);
+		name = "/Developer/Examples/Quartz Composer/Applications/-QCTV/Compositions/Contents.qtz";
+		rLen = 0;
+		rLoc = 2147483647;
+	};
+	A5BC41F30F4385A500C916B3 /* QuartzComposerTV */ = {
+		isa = PBXExecutable;
+		activeArgIndices = (
+		);
+		argumentStrings = (
+		);
+		autoAttachOnCrash = 1;
+		breakpointsEnabled = 0;
+		configStateDict = {
+		};
+		customDataFormattersEnabled = 1;
+		debuggerPlugin = GDBDebugging;
+		disassemblyDisplayState = 0;
+		dylibVariantSuffix = "";
+		enableDebugStr = 1;
+		environmentEntries = (
+		);
+		executableSystemSymbolLevel = 0;
+		executableUserSymbolLevel = 0;
+		libgmallocEnabled = 0;
+		name = QuartzComposerTV;
+		sourceDirectories = (
+		);
+	};
+	A5BC42060F4385BA00C916B3 /* Source Control */ = {
+		isa = PBXSourceControlManager;
+		fallbackIsa = XCSourceControlManager;
+		isSCMEnabled = 0;
+		scmConfiguration = {
+		};
+	};
+	A5BC42070F4385BA00C916B3 /* Code sense */ = {
+		isa = PBXCodeSenseManager;
+		indexTemplatePath = "";
+	};
+}

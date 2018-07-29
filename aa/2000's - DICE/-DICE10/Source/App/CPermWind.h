@@ -1,0 +1,1 @@
+/* Disable close for permanent windows.2003.03.25 	jht		Created.*/#pragma once#include <LWindow.h>class CPermWind : public LWindow {	public:								CPermWind(LStream *inStream);		virtual					~CPermWind();		virtual void		AttemptClose();		virtual void		DoClose();};

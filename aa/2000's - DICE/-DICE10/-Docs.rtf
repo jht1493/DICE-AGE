@@ -1,0 +1,963 @@
+{\rtf1\mac\ansicpg10000\cocoartf824\cocoasubrtf410
+{\fonttbl\f0\fnil\fcharset77 LucidaGrande-Bold;\f1\fnil\fcharset77 LucidaGrande;\f2\fnil\fcharset77 Monaco;
+\f3\fswiss\fcharset77 Helvetica-Oblique;}
+{\colortbl;\red255\green255\blue255;\red0\green37\blue254;\red0\green50\blue230;}
+{\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc2\leveljcn2\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid0\'02\'05.;}{\levelnumbers\'01;}}{\listname ;}\listid1}
+{\list\listtemplateid2\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc2\leveljcn2\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid0\'02\'05.;}{\levelnumbers\'01;}}{\listname ;}\listid2}
+{\list\listtemplateid3\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc2\leveljcn2\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid0\'02\'05.;}{\levelnumbers\'01;}}{\listname ;}\listid3}
+{\list\listtemplateid4\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc2\leveljcn2\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid0\'02\'05.;}{\levelnumbers\'01;}}{\listname ;}\listid4}
+{\list\listtemplateid5\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc2\leveljcn2\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid0\'02\'05.;}{\levelnumbers\'01;}}{\listname ;}\listid5}
+{\list\listtemplateid6\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc2\leveljcn2\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid0\'02\'05.;}{\levelnumbers\'01;}}{\listname ;}\listid6}
+{\list\listtemplateid7\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc2\leveljcn2\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid0\'02\'05.;}{\levelnumbers\'01;}}{\listname ;}\listid7}
+{\list\listtemplateid8\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc2\leveljcn2\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid0\'02\'05.;}{\levelnumbers\'01;}}{\listname ;}\listid8}}
+{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}{\listoverride\listid2\listoverridecount0\ls2}{\listoverride\listid3\listoverridecount0\ls3}{\listoverride\listid4\listoverridecount0\ls4}{\listoverride\listid5\listoverridecount0\ls5}{\listoverride\listid6\listoverridecount0\ls6}{\listoverride\listid7\listoverridecount0\ls7}{\listoverride\listid8\listoverridecount0\ls8}}
+\margl1440\margr1440\vieww13820\viewh11260\viewkind0
+\deftab720
+\pard\pardeftab720\ql\qnatural
+
+\f0\b\fs38 \cf0 FSCreateFileUnicode\
+\pard\pardeftab720\sa200\ql\qnatural
+
+\f1\b0\fs24 \cf0 Creates a new file with a Unicode name.\
+\
+\pard\pardeftab720\ql\qnatural
+
+\f2\fs22 \cf0 OSErr FSCreateFileUnicode (\
+   const {\field{\*\fldinst{HYPERLINK "file:///Developer/ADC%20Reference%20Library/documentation/Carbon/Reference/File_Manager/Reference/reference.html#//apple_ref/doc/c_ref/FSRef"}}{\fldrslt \cf2 FSRef}} * parentRef,\
+   UniCharCount nameLength,\
+   const UniChar * name,\
+   {\field{\*\fldinst{HYPERLINK "file:///Developer/ADC%20Reference%20Library/documentation/Carbon/Reference/File_Manager/Reference/reference.html#//apple_ref/doc/c_ref/FSCatalogInfoBitmap"}}{\fldrslt \cf2 FSCatalogInfoBitmap}} whichInfo,\
+   const {\field{\*\fldinst{HYPERLINK "file:///Developer/ADC%20Reference%20Library/documentation/Carbon/Reference/File_Manager/Reference/reference.html#//apple_ref/doc/c_ref/FSCatalogInfo"}}{\fldrslt \cf2 FSCatalogInfo}} * catalogInfo,\
+   {\field{\*\fldinst{HYPERLINK "file:///Developer/ADC%20Reference%20Library/documentation/Carbon/Reference/File_Manager/Reference/reference.html#//apple_ref/doc/c_ref/FSRef"}}{\fldrslt \cf2 FSRef}} * newRef,\
+   {\field{\*\fldinst{HYPERLINK "file:///Developer/ADC%20Reference%20Library/documentation/Carbon/Reference/File_Manager/Reference/reference.html#//apple_ref/doc/c_ref/FSSpec"}}{\fldrslt \cf2 FSSpec}} * newSpec\
+);\
+\pard\pardeftab720\sa200\ql\qnatural
+
+\f1\fs24 \cf0 \
+\pard\pardeftab720\sa40\ql\qnatural
+
+\f0\b\fs26 \cf0 Parameters\
+\pard\pardeftab720\ql\qnatural
+
+\f3\i\b0\fs24 \cf0 parentRef
+\f1\i0 \
+\pard\pardeftab720\sa120\ql\qnatural
+\cf0 A pointer to an 
+\f2\fs22 FSRef
+\f1\fs24  for the directory where the file is to be created. See {\field{\*\fldinst{HYPERLINK "file:///Developer/ADC%20Reference%20Library/documentation/Carbon/Reference/File_Manager/Reference/reference.html#//apple_ref/c/tdef/FSRef"}}{\fldrslt 
+\f2\fs22 \cf2 FSRef}} for a description of the 
+\f2\fs22 FSRef
+\f1\fs24  data type.\
+\pard\pardeftab720\ql\qnatural
+
+\f3\i \cf0 nameLength
+\f1\i0 \
+\pard\pardeftab720\sa120\ql\qnatural
+\cf0 The length of the file's name.\
+\pard\pardeftab720\ql\qnatural
+
+\f3\i \cf0 name
+\f1\i0 \
+\pard\pardeftab720\sa120\ql\qnatural
+\cf0 A pointer to the Unicode name for the new file.\
+\pard\pardeftab720\ql\qnatural
+
+\f3\i \cf0 whichInfo
+\f1\i0 \
+\pard\pardeftab720\sa120\ql\qnatural
+\cf0 A bitmap specifying which catalog information fields to set for the new file. You specify the values for these fields in the 
+\f2\fs22 catalogInfo
+\f1\fs24  parameter. If you do not wish to set catalog information for the new file, pass the constant 
+\f2\fs22 kFSCatInfoNone
+\f1\fs24 . See {\field{\*\fldinst{HYPERLINK "file:///Developer/ADC%20Reference%20Library/documentation/Carbon/Reference/File_Manager/Reference/reference.html#//apple_ref/doc/constant_group/Catalog_Information_Bitmap_Constants"}}{\fldrslt \cf2 \'d2Catalog Information Bitmap Constants\'d3}} for a description of the bits defined for this parameter.\
+\pard\pardeftab720\ql\qnatural
+
+\f3\i \cf0 catalogInfo
+\f1\i0 \
+\pard\pardeftab720\sa120\ql\qnatural
+\cf0 A pointer to the 
+\f2\fs22 FSCatalogInfo
+\f1\fs24  structure which specifies the values of the new file\'d5s catalog information. Specify which fields to set in the 
+\f2\fs22 whichInfo
+\f1\fs24  parameter.\
+This parameter is optional; specify 
+\f2\fs22 NULL
+\f1\fs24  if you do not wish to set catalog information for the new file.\
+\
+\pard\pardeftab720\ql\qnatural
+
+\f3\i \cf0 newRef
+\f1\i0 \
+\pard\pardeftab720\sa120\ql\qnatural
+\cf0 On return, a pointer to the 
+\f2\fs22 FSRef
+\f1\fs24  for the new file. If you do not want the 
+\f2\fs22 FSRef
+\f1\fs24  returned, specify 
+\f2\fs22 NULL
+\f1\fs24 .\
+\pard\pardeftab720\ql\qnatural
+
+\f3\i \cf0 newSpec
+\f1\i0 \
+\pard\pardeftab720\sa120\ql\qnatural
+\cf0 On return, a pointer to the 
+\f2\fs22 FSSpec
+\f1\fs24  for the new file. If you do not want the 
+\f2\fs22 FSSpec
+\f1\fs24  returned, specify 
+\f2\fs22 NULL
+\f1\fs24 . See {\field{\*\fldinst{HYPERLINK "file:///Developer/ADC%20Reference%20Library/documentation/Carbon/Reference/File_Manager/Reference/reference.html#//apple_ref/c/tdef/FSSpec"}}{\fldrslt 
+\f2\fs22 \cf2 FSSpec}} for a description of the 
+\f2\fs22 FSSpec
+\f1\fs24  data type.\
+\pard\pardeftab720\sa40\ql\qnatural
+
+\f0\b\fs26 \cf0 Return Value\
+\pard\pardeftab720\sa200\ql\qnatural
+
+\f1\b0\fs24 \cf0 A result code. See {\field{\*\fldinst{HYPERLINK "file:///Developer/ADC%20Reference%20Library/documentation/Carbon/Reference/File_Manager/Reference/reference.html#//apple_ref/doc/uid/TP30000107-CH5g-RCM0037"}}{\fldrslt \cf2 \'d2File Manager Result Codes\'d3}}.\
+\pard\pardeftab720\sa40\ql\qnatural
+
+\f0\b\fs26 \cf0 Discussion\
+\pard\pardeftab720\sa200\ql\qnatural
+
+\f1\b0\fs24 \cf0 You may optionally set catalog information for the new file using the 
+\f2\fs22 whichInfo
+\f1\fs24  and 
+\f2\fs22 catalogInfo
+\f1\fs24  parameters; this is equivalent to calling {\field{\*\fldinst{HYPERLINK "file:///Developer/ADC%20Reference%20Library/documentation/Carbon/Reference/File_Manager/Reference/reference.html#//apple_ref/c/func/FSSetCatalogInfo"}}{\fldrslt 
+\f2\fs22 \cf2 FSSetCatalogInfo}} , or one of the corresponding parameter block functions, {\field{\*\fldinst{HYPERLINK "file:///Developer/ADC%20Reference%20Library/documentation/Carbon/Reference/File_Manager/Reference/reference.html#//apple_ref/c/func/PBSetCatalogInfoSync"}}{\fldrslt 
+\f2\fs22 \cf2 PBSetCatalogInfoSync}} and {\field{\*\fldinst{HYPERLINK "file:///Developer/ADC%20Reference%20Library/documentation/Carbon/Reference/File_Manager/Reference/reference.html#//apple_ref/c/func/PBSetCatalogInfoAsync"}}{\fldrslt 
+\f2\fs22 \cf2 PBSetCatalogInfoAsync}} , after creating the file.\
+If possible, you should set the 
+\f2\fs22 textEncodingHint
+\f1\fs24  field of the catalog information structure specified in the 
+\f2\fs22 catalogInfo
+\f1\fs24  parameter. This will be used by the volume format when converting the Unicode filename to other encodings.\
+\pard\pardeftab720\sa40\ql\qnatural
+
+\f0\b\fs26 \cf0 Special Considerations\
+\pard\pardeftab720\sa200\ql\qnatural
+
+\f1\b0\fs24 \cf0 If the 
+\f2\fs22 FSCreateFileUnicode
+\f1\fs24  function is present, but is not implemented by a particular volume, the File Manager will emulate this function by making the appropriate call to {\field{\*\fldinst{HYPERLINK "file:///Developer/ADC%20Reference%20Library/documentation/Carbon/Reference/File_Manager/DeprecationAppendix/AppendixADeprecatedAPI.html#//apple_ref/c/func/PBHCreateSync"}}{\fldrslt 
+\f2\fs22 \cf2 PBHCreateSync}}. However, if the function is not directly supported by the volume, you will not be able to use the long Unicode filenames, or other features added with HFS Plus.\
+\pard\pardeftab720\sa40\ql\qnatural
+
+\f0\b\fs26 \cf0 Availability\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\ql\qnatural
+\ls1\ilvl0
+\f1\b0\fs24 \cf0 {\listtext	\'a5	}Available in CarbonLib 1.0 and later when running Mac OS 9 or later.\
+{\listtext	\'a5	}Available in Mac OS X version 10.0 and later.\
+\pard\tx720\pardeftab720\ql\qnatural
+
+\f0\b\fs38 \cf0 \
+\pard\pardeftab720\ql\qnatural
+\cf0 FSGetCatalogInfo\
+\pard\pardeftab720\sa200\ql\qnatural
+
+\f1\b0\fs24 \cf0 Returns catalog information about a file or directory. You can use this function to map an 
+\f2\fs22 FSRef
+\f1\fs24  to an 
+\f2\fs22 FSSpec
+\f1\fs24 .\
+\
+\pard\pardeftab720\ql\qnatural
+
+\f2\fs22 \cf0 OSErr FSGetCatalogInfo (\
+   const {\field{\*\fldinst{HYPERLINK "file:///Developer/ADC%20Reference%20Library/documentation/Carbon/Reference/File_Manager/Reference/reference.html#//apple_ref/doc/c_ref/FSRef"}}{\fldrslt \cf2 FSRef}} * ref,\
+   {\field{\*\fldinst{HYPERLINK "file:///Developer/ADC%20Reference%20Library/documentation/Carbon/Reference/File_Manager/Reference/reference.html#//apple_ref/doc/c_ref/FSCatalogInfoBitmap"}}{\fldrslt \cf2 FSCatalogInfoBitmap}} whichInfo,\
+   {\field{\*\fldinst{HYPERLINK "file:///Developer/ADC%20Reference%20Library/documentation/Carbon/Reference/File_Manager/Reference/reference.html#//apple_ref/doc/c_ref/FSCatalogInfo"}}{\fldrslt \cf2 FSCatalogInfo}} * catalogInfo,\
+   {\field{\*\fldinst{HYPERLINK "file:///Developer/ADC%20Reference%20Library/documentation/Carbon/Reference/File_Manager/Reference/reference.html#//apple_ref/doc/c_ref/HFSUniStr255"}}{\fldrslt \cf2 HFSUniStr255}} * outName,\
+   {\field{\*\fldinst{HYPERLINK "file:///Developer/ADC%20Reference%20Library/documentation/Carbon/Reference/File_Manager/Reference/reference.html#//apple_ref/doc/c_ref/FSSpec"}}{\fldrslt \cf2 FSSpec}} * fsSpec,\
+   {\field{\*\fldinst{HYPERLINK "file:///Developer/ADC%20Reference%20Library/documentation/Carbon/Reference/File_Manager/Reference/reference.html#//apple_ref/doc/c_ref/FSRef"}}{\fldrslt \cf2 FSRef}} * parentRef\
+);\
+\
+\pard\pardeftab720\ql\qnatural
+
+\f0\b\fs38 \cf0 FSPathMakeRef\
+\pard\pardeftab720\sa200\ql\qnatural
+
+\f1\b0\fs24 \cf0 Converts a path into an 
+\f2\fs22 FSRef
+\f1\fs24  structure.\
+\
+\pard\pardeftab720\ql\qnatural
+
+\f2\fs22 \cf0 OSStatus FSPathMakeRef (\
+   const UInt8 * path,\
+   {\field{\*\fldinst{HYPERLINK "file:///Developer/ADC%20Reference%20Library/documentation/Carbon/Reference/File_Manager/Reference/reference.html#//apple_ref/doc/c_ref/FSRef"}}{\fldrslt \cf2 FSRef}} * ref,\
+   Boolean * isDirectory\
+);\
+\pard\pardeftab720\sa200\ql\qnatural
+
+\f1\fs24 \cf0 \
+\pard\pardeftab720\sa40\ql\qnatural
+
+\f0\b\fs26 \cf0 Parameters\
+\pard\pardeftab720\ql\qnatural
+
+\f3\i\b0\fs24 \cf0 path
+\f1\i0 \
+\pard\pardeftab720\sa120\ql\qnatural
+\cf0 The path for which to return an 
+\f2\fs22 FSRef
+\f1\fs24 . This path can be used by POSIX-style calls.\
+\pard\pardeftab720\ql\qnatural
+
+\f3\i \cf0 ref
+\f1\i0 \
+\pard\pardeftab720\sa120\ql\qnatural
+\cf0 On return, a pointer to the 
+\f2\fs22 FSRef
+\f1\fs24 .\
+\pard\pardeftab720\ql\qnatural
+
+\f3\i \cf0 isDirectory
+\f1\i0 \
+\pard\pardeftab720\sa120\ql\qnatural
+\cf0 A Boolean value indicating whether the object at specified by the given path is a directory. This parameter is optional and can be 
+\f2\fs22 NULL
+\f1\fs24 .\
+\pard\pardeftab720\sa40\ql\qnatural
+
+\f0\b\fs26 \cf0 Return Value\
+\pard\pardeftab720\sa200\ql\qnatural
+
+\f1\b0\fs24 \cf0 A result code. See {\field{\*\fldinst{HYPERLINK "file:///Developer/ADC%20Reference%20Library/documentation/Carbon/Reference/File_Manager/Reference/reference.html#//apple_ref/doc/uid/TP30000107-CH5g-RCM0037"}}{\fldrslt \cf2 \'d2File Manager Result Codes\'d3}}.\
+\
+
+\f0\b\fs38 FSRefMakePath\
+
+\f1\b0\fs24 Converts an 
+\f2\fs22 FSRef
+\f1\fs24  into a path.\
+\
+\pard\pardeftab720\ql\qnatural
+
+\f2\fs22 \cf0 OSStatus FSRefMakePath (\
+   const {\field{\*\fldinst{HYPERLINK "file:///Developer/ADC%20Reference%20Library/documentation/Carbon/Reference/File_Manager/Reference/reference.html#//apple_ref/doc/c_ref/FSRef"}}{\fldrslt \cf2 FSRef}} * ref,\
+   UInt8 * path,\
+   UInt32 maxPathSize\
+);\
+\pard\pardeftab720\sa200\ql\qnatural
+
+\f1\fs24 \cf0 \
+\pard\pardeftab720\sa40\ql\qnatural
+
+\f0\b\fs26 \cf0 Parameters\
+\pard\pardeftab720\ql\qnatural
+
+\f3\i\b0\fs24 \cf0 ref
+\f1\i0 \
+\pard\pardeftab720\sa120\ql\qnatural
+\cf0 The 
+\f2\fs22 FSRef
+\f1\fs24  to convert into a path.\
+\pard\pardeftab720\ql\qnatural
+
+\f3\i \cf0 path
+\f1\i0 \
+\pard\pardeftab720\sa120\ql\qnatural
+\cf0 On return, a pointer to the path. This path can be used by POSIX-style calls.\
+\pard\pardeftab720\ql\qnatural
+
+\f3\i \cf0 pathSize
+\f1\i0 \
+\pard\pardeftab720\sa120\ql\qnatural
+\cf0 The size of the path.\
+\pard\pardeftab720\ql\qnatural
+
+\f0\b\fs38 \cf0 \
+FSMakeFSRefUnicode\
+\pard\pardeftab720\sa200\ql\qnatural
+
+\f1\b0\fs24 \cf0 Constructs an 
+\f2\fs22 FSRef
+\f1\fs24  for a file or directory, given a parent directory and a Unicode name.\
+\
+\pard\pardeftab720\ql\qnatural
+
+\f2\fs22 \cf0 OSErr FSMakeFSRefUnicode (\
+   const {\field{\*\fldinst{HYPERLINK "file:///Developer/ADC%20Reference%20Library/documentation/Carbon/Reference/File_Manager/Reference/reference.html#//apple_ref/doc/c_ref/FSRef"}}{\fldrslt \cf2 FSRef}} * parentRef,\
+   UniCharCount nameLength,\
+   const UniChar * name,\
+   {\field{\*\fldinst{HYPERLINK "file:///Developer/ADC%20Reference%20Library/documentation/Carbon/Reference/Text_Encodin_sion_Manager/Reference/reference.html#//apple_ref/doc/c_ref/TextEncoding"}}{\fldrslt \cf2 TextEncoding}} textEncodingHint,\
+   {\field{\*\fldinst{HYPERLINK "file:///Developer/ADC%20Reference%20Library/documentation/Carbon/Reference/File_Manager/Reference/reference.html#//apple_ref/doc/c_ref/FSRef"}}{\fldrslt \cf2 FSRef}} * newRef\
+);\
+\pard\pardeftab720\sa200\ql\qnatural
+
+\f1\fs24 \cf0 \
+\pard\pardeftab720\sa40\ql\qnatural
+
+\f0\b\fs26 \cf0 Parameters\
+\pard\pardeftab720\ql\qnatural
+
+\f3\i\b0\fs24 \cf0 parentRef
+\f1\i0 \
+\pard\pardeftab720\sa120\ql\qnatural
+\cf0 A pointer to the 
+\f2\fs22 FSRef
+\f1\fs24  of the parent directory of the file or directory for which to create a new 
+\f2\fs22 FSRef
+\f1\fs24 . See {\field{\*\fldinst{HYPERLINK "file:///Developer/ADC%20Reference%20Library/documentation/Carbon/Reference/File_Manager/Reference/reference.html#//apple_ref/c/tdef/FSRef"}}{\fldrslt 
+\f2\fs22 \cf2 FSRef}} for a description of the 
+\f2\fs22 FSRef
+\f1\fs24  data type.\
+\pard\pardeftab720\ql\qnatural
+
+\f3\i \cf0 nameLength
+\f1\i0 \
+\pard\pardeftab720\sa120\ql\qnatural
+\cf0 The length of the file or directory name.\
+\pard\pardeftab720\ql\qnatural
+
+\f3\i \cf0 name
+\f1\i0 \
+\pard\pardeftab720\sa120\ql\qnatural
+\cf0 A pointer to the Unicode name for the file or directory. The name must be a leaf name; partial or full pathnames are not allowed. If you have a partial or full pathname in Unicode, you will have to parse it yourself and make multiple calls to 
+\f2\fs22 FSMakeFSRefUnicode
+\f1\fs24 .\
+\pard\pardeftab720\ql\qnatural
+
+\f3\i \cf0 textEncodingHint
+\f1\i0 \
+\pard\pardeftab720\sa120\ql\qnatural
+\cf0 The suggested text encoding to use when converting the Unicode name of the file or directory to some other encoding. If you pass the constant 
+\f2\fs22 kTextEncodingUnknown
+\f1\fs24 , the File Manager will use a default value.\
+\pard\pardeftab720\ql\qnatural
+
+\f3\i \cf0 newRef
+\f1\i0 \
+\pard\pardeftab720\sa120\ql\qnatural
+\cf0 On return, if the function returns a result of 
+\f2\fs22 noErr,
+\f1\fs24  a pointer to the new 
+\f2\fs22 FSRef
+\f1\fs24 .\
+\pard\pardeftab720\sa40\ql\qnatural
+
+\f0\b\fs26 \cf0 Return Value\
+\pard\pardeftab720\sa200\ql\qnatural
+
+\f1\b0\fs24 \cf0 A result code. See {\field{\*\fldinst{HYPERLINK "file:///Developer/ADC%20Reference%20Library/documentation/Carbon/Reference/File_Manager/Reference/reference.html#//apple_ref/doc/uid/TP30000107-CH5g-RCM0037"}}{\fldrslt \cf2 \'d2File Manager Result Codes\'d3}}.\
+\pard\pardeftab720\sa40\ql\qnatural
+
+\f0\b\fs26 \cf0 Availability\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\ql\qnatural
+\ls2\ilvl0
+\f1\b0\fs24 \cf0 {\listtext	\'a5	}Available in CarbonLib 1.0 and later when running Mac OS 9 or later.\
+{\listtext	\'a5	}Available in Mac OS X version 10.0 and later.\
+\ls2\ilvl0
+\f0\b\fs38 \
+FSCreateFileUnicode\
+\pard\pardeftab720\sa200\ql\qnatural
+\ls2\ilvl0
+\f1\b0\fs24 \cf0 {\listtext	\'a5	}Creates a new file with a Unicode name.\
+{\listtext	\'a5	}\
+\pard\pardeftab720\ql\qnatural
+\ls2\ilvl0
+\f2\fs22 \cf0 {\listtext	\'a5	}OSErr FSCreateFileUnicode (\
+{\listtext	\'a5	}   const {\field{\*\fldinst{HYPERLINK "file:///Developer/ADC%20Reference%20Library/documentation/Carbon/Reference/File_Manager/Reference/reference.html#//apple_ref/doc/c_ref/FSRef"}}{\fldrslt \cf2 FSRef}} * parentRef,\
+{\listtext	\'a5	}   UniCharCount nameLength,\
+{\listtext	\'a5	}   const UniChar * name,\
+{\listtext	\'a5	}   {\field{\*\fldinst{HYPERLINK "file:///Developer/ADC%20Reference%20Library/documentation/Carbon/Reference/File_Manager/Reference/reference.html#//apple_ref/doc/c_ref/FSCatalogInfoBitmap"}}{\fldrslt \cf2 FSCatalogInfoBitmap}} whichInfo,\
+{\listtext	\'a5	}   const {\field{\*\fldinst{HYPERLINK "file:///Developer/ADC%20Reference%20Library/documentation/Carbon/Reference/File_Manager/Reference/reference.html#//apple_ref/doc/c_ref/FSCatalogInfo"}}{\fldrslt \cf2 FSCatalogInfo}} * catalogInfo,\
+{\listtext	\'a5	}   {\field{\*\fldinst{HYPERLINK "file:///Developer/ADC%20Reference%20Library/documentation/Carbon/Reference/File_Manager/Reference/reference.html#//apple_ref/doc/c_ref/FSRef"}}{\fldrslt \cf2 FSRef}} * newRef,\
+{\listtext	\'a5	}   {\field{\*\fldinst{HYPERLINK "file:///Developer/ADC%20Reference%20Library/documentation/Carbon/Reference/File_Manager/Reference/reference.html#//apple_ref/doc/c_ref/FSSpec"}}{\fldrslt \cf2 FSSpec}} * newSpec\
+{\listtext	\'a5	});\
+\pard\pardeftab720\sa200\ql\qnatural
+\ls2\ilvl0
+\f1\fs24 \cf0 {\listtext	\'a5	}\
+\pard\pardeftab720\sa40\ql\qnatural
+\ls2\ilvl0
+\f0\b\fs26 \cf0 {\listtext	\'a5	}Parameters\
+\pard\pardeftab720\ql\qnatural
+\ls2\ilvl0
+\f3\i\b0\fs24 \cf0 {\listtext	\'a5	}parentRef
+\f1\i0 \
+\pard\pardeftab720\sa120\ql\qnatural
+\ls2\ilvl0\cf0 {\listtext	\'a5	}A pointer to an 
+\f2\fs22 FSRef
+\f1\fs24  for the directory where the file is to be created. See {\field{\*\fldinst{HYPERLINK "file:///Developer/ADC%20Reference%20Library/documentation/Carbon/Reference/File_Manager/Reference/reference.html#//apple_ref/c/tdef/FSRef"}}{\fldrslt 
+\f2\fs22 \cf2 FSRef}} for a description of the 
+\f2\fs22 FSRef
+\f1\fs24  data type.\
+\pard\pardeftab720\ql\qnatural
+\ls2\ilvl0
+\f3\i \cf0 {\listtext	\'a5	}nameLength
+\f1\i0 \
+\pard\pardeftab720\sa120\ql\qnatural
+\ls2\ilvl0\cf0 {\listtext	\'a5	}The length of the file's name.\
+\pard\pardeftab720\ql\qnatural
+\ls2\ilvl0
+\f3\i \cf0 {\listtext	\'a5	}name
+\f1\i0 \
+\pard\pardeftab720\sa120\ql\qnatural
+\ls2\ilvl0\cf0 {\listtext	\'a5	}A pointer to the Unicode name for the new file.\
+\pard\pardeftab720\ql\qnatural
+\ls2\ilvl0
+\f3\i \cf0 {\listtext	\'a5	}whichInfo
+\f1\i0 \
+\pard\pardeftab720\sa120\ql\qnatural
+\ls2\ilvl0\cf0 {\listtext	\'a5	}A bitmap specifying which catalog information fields to set for the new file. You specify the values for these fields in the 
+\f2\fs22 catalogInfo
+\f1\fs24  parameter. If you do not wish to set catalog information for the new file, pass the constant 
+\f2\fs22 kFSCatInfoNone
+\f1\fs24 . See {\field{\*\fldinst{HYPERLINK "file:///Developer/ADC%20Reference%20Library/documentation/Carbon/Reference/File_Manager/Reference/reference.html#//apple_ref/doc/constant_group/Catalog_Information_Bitmap_Constants"}}{\fldrslt \cf2 \'d2Catalog Information Bitmap Constants\'d3}} for a description of the bits defined for this parameter.\
+\pard\pardeftab720\ql\qnatural
+\ls2\ilvl0
+\f3\i \cf0 {\listtext	\'a5	}catalogInfo
+\f1\i0 \
+\pard\pardeftab720\sa120\ql\qnatural
+\ls2\ilvl0\cf0 {\listtext	\'a5	}A pointer to the 
+\f2\fs22 FSCatalogInfo
+\f1\fs24  structure which specifies the values of the new file\'d5s catalog information. Specify which fields to set in the 
+\f2\fs22 whichInfo
+\f1\fs24  parameter.\
+{\listtext	\'a5	}This parameter is optional; specify 
+\f2\fs22 NULL
+\f1\fs24  if you do not wish to set catalog information for the new file.\
+{\listtext	\'a5	}\
+\pard\pardeftab720\ql\qnatural
+\ls2\ilvl0
+\f3\i \cf0 {\listtext	\'a5	}newRef
+\f1\i0 \
+\pard\pardeftab720\sa120\ql\qnatural
+\ls2\ilvl0\cf0 {\listtext	\'a5	}On return, a pointer to the 
+\f2\fs22 FSRef
+\f1\fs24  for the new file. If you do not want the 
+\f2\fs22 FSRef
+\f1\fs24  returned, specify 
+\f2\fs22 NULL
+\f1\fs24 .\
+\pard\pardeftab720\ql\qnatural
+\ls2\ilvl0
+\f3\i \cf0 {\listtext	\'a5	}newSpec
+\f1\i0 \
+\pard\pardeftab720\sa120\ql\qnatural
+\ls2\ilvl0\cf0 {\listtext	\'a5	}On return, a pointer to the 
+\f2\fs22 FSSpec
+\f1\fs24  for the new file. If you do not want the 
+\f2\fs22 FSSpec
+\f1\fs24  returned, specify 
+\f2\fs22 NULL
+\f1\fs24 . See {\field{\*\fldinst{HYPERLINK "file:///Developer/ADC%20Reference%20Library/documentation/Carbon/Reference/File_Manager/Reference/reference.html#//apple_ref/c/tdef/FSSpec"}}{\fldrslt 
+\f2\fs22 \cf2 FSSpec}} for a description of the 
+\f2\fs22 FSSpec
+\f1\fs24  data type.\
+\pard\pardeftab720\sa40\ql\qnatural
+\ls2\ilvl0
+\f0\b\fs26 \cf0 {\listtext	\'a5	}Return Value\
+\pard\pardeftab720\sa200\ql\qnatural
+\ls2\ilvl0
+\f1\b0\fs24 \cf0 {\listtext	\'a5	}A result code. See {\field{\*\fldinst{HYPERLINK "file:///Developer/ADC%20Reference%20Library/documentation/Carbon/Reference/File_Manager/Reference/reference.html#//apple_ref/doc/uid/TP30000107-CH5g-RCM0037"}}{\fldrslt \cf2 \'d2File Manager Result Codes\'d3}}.\
+\pard\pardeftab720\sa40\ql\qnatural
+\ls2\ilvl0
+\f0\b\fs26 \cf0 {\listtext	\'a5	}Discussion\
+\pard\pardeftab720\sa200\ql\qnatural
+\ls2\ilvl0
+\f1\b0\fs24 \cf0 {\listtext	\'a5	}You may optionally set catalog information for the new file using the 
+\f2\fs22 whichInfo
+\f1\fs24  and 
+\f2\fs22 catalogInfo
+\f1\fs24  parameters; this is equivalent to calling {\field{\*\fldinst{HYPERLINK "file:///Developer/ADC%20Reference%20Library/documentation/Carbon/Reference/File_Manager/Reference/reference.html#//apple_ref/c/func/FSSetCatalogInfo"}}{\fldrslt 
+\f2\fs22 \cf2 FSSetCatalogInfo}} , or one of the corresponding parameter block functions, {\field{\*\fldinst{HYPERLINK "file:///Developer/ADC%20Reference%20Library/documentation/Carbon/Reference/File_Manager/Reference/reference.html#//apple_ref/c/func/PBSetCatalogInfoSync"}}{\fldrslt 
+\f2\fs22 \cf2 PBSetCatalogInfoSync}} and {\field{\*\fldinst{HYPERLINK "file:///Developer/ADC%20Reference%20Library/documentation/Carbon/Reference/File_Manager/Reference/reference.html#//apple_ref/c/func/PBSetCatalogInfoAsync"}}{\fldrslt 
+\f2\fs22 \cf2 PBSetCatalogInfoAsync}} , after creating the file.\
+{\listtext	\'a5	}If possible, you should set the 
+\f2\fs22 textEncodingHint
+\f1\fs24  field of the catalog information structure specified in the 
+\f2\fs22 catalogInfo
+\f1\fs24  parameter. This will be used by the volume format when converting the Unicode filename to other encodings.\
+\pard\pardeftab720\sa40\ql\qnatural
+\ls2\ilvl0
+\f0\b\fs26 \cf0 {\listtext	\'a5	}Special Considerations\
+\pard\pardeftab720\sa200\ql\qnatural
+\ls2\ilvl0
+\f1\b0\fs24 \cf0 {\listtext	\'a5	}If the 
+\f2\fs22 FSCreateFileUnicode
+\f1\fs24  function is present, but is not implemented by a particular volume, the File Manager will emulate this function by making the appropriate call to {\field{\*\fldinst{HYPERLINK "file:///Developer/ADC%20Reference%20Library/documentation/Carbon/Reference/File_Manager/DeprecationAppendix/AppendixADeprecatedAPI.html#//apple_ref/c/func/PBHCreateSync"}}{\fldrslt 
+\f2\fs22 \cf2 PBHCreateSync}}. However, if the function is not directly supported by the volume, you will not be able to use the long Unicode filenames, or other features added with HFS Plus.\
+\pard\pardeftab720\sa40\ql\qnatural
+\ls2\ilvl0
+\f0\b\fs26 \cf0 {\listtext	\'a5	}Availability\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\ql\qnatural
+\ls2\ilvl0
+\f1\b0\fs24 \cf0 {\listtext	\'a5	}Available in CarbonLib 1.0 and later when running Mac OS 9 or later.\
+{\listtext	\'a5	}Available in Mac OS X version 10.0 and later.\
+\pard\pardeftab720\sa40\ql\qnatural
+\ls2\ilvl0
+\f0\b\fs26 \cf0 {\listtext	\'a5	}Declared In\
+\pard\tx720\pardeftab720\sa40\ql\qnatural
+
+\fs38 \cf0 \
+\
+\pard\pardeftab720\ql\qnatural
+\cf0 FSOpenFork\
+\pard\pardeftab720\sa200\ql\qnatural
+
+\f1\b0\fs24 \cf0 Opens any fork of a file or directory for streaming access.\
+\
+\pard\pardeftab720\ql\qnatural
+
+\f2\fs22 \cf0 OSErr FSOpenFork (\
+   const {\field{\*\fldinst{HYPERLINK "file:///Developer/ADC%20Reference%20Library/documentation/Carbon/Reference/File_Manager/Reference/reference.html#//apple_ref/doc/c_ref/FSRef"}}{\fldrslt \cf2 FSRef}} * ref,\
+   UniCharCount forkNameLength,\
+   const UniChar * forkName,\
+   SInt8 permissions,\
+   SInt16 * forkRefNum\
+);\
+\pard\pardeftab720\sa200\ql\qnatural
+
+\f1\fs24 \cf0 \
+\pard\pardeftab720\sa40\ql\qnatural
+
+\f0\b\fs26 \cf0 Parameters\
+\pard\pardeftab720\ql\qnatural
+
+\f3\i\b0\fs24 \cf0 ref
+\f1\i0 \
+\pard\pardeftab720\sa120\ql\qnatural
+\cf0 A pointer to an 
+\f2\fs22 FSRef
+\f1\fs24  specifying the file or directory owning the fork to open. See {\field{\*\fldinst{HYPERLINK "file:///Developer/ADC%20Reference%20Library/documentation/Carbon/Reference/File_Manager/Reference/reference.html#//apple_ref/c/tdef/FSRef"}}{\fldrslt 
+\f2\fs22 \cf2 FSRef}} for a description of the 
+\f2\fs22 FSRef
+\f1\fs24  data type.\
+\pard\pardeftab720\ql\qnatural
+
+\f3\i \cf0 forkNameLength
+\f1\i0 \
+\pard\pardeftab720\sa120\ql\qnatural
+\cf0 The length of the fork name in Unicode characters.\
+\pard\pardeftab720\ql\qnatural
+
+\f3\i \cf0 forkName
+\f1\i0 \
+\pard\pardeftab720\sa120\ql\qnatural
+\cf0 A pointer to the Unicode name of the fork to open. You can obtain the string constants for the data fork and resource fork names using the {\field{\*\fldinst{HYPERLINK "file:///Developer/ADC%20Reference%20Library/documentation/Carbon/Reference/File_Manager/Reference/reference.html#//apple_ref/c/func/FSGetDataForkName"}}{\fldrslt 
+\f2\fs22 \cf2 FSGetDataForkName}} and {\field{\*\fldinst{HYPERLINK "file:///Developer/ADC%20Reference%20Library/documentation/Carbon/Reference/File_Manager/Reference/reference.html#//apple_ref/c/func/FSGetResourceForkName"}}{\fldrslt 
+\f2\fs22 \cf2 FSGetResourceForkName}} functions. All volume formats should support data and resource forks; other named forks may be supported by some volume formats.\
+\pard\pardeftab720\ql\qnatural
+
+\f3\i \cf0 permissions
+\f1\i0 \
+\pard\pardeftab720\sa120\ql\qnatural
+\cf0 A constant indicating the type of access which you wish to have to the fork via the returned fork reference. This parameter is the same as the 
+\f2\fs22 permission
+\f1\fs24  parameter passed to the 
+\f2\fs22 FSpOpenDF
+\f1\fs24  and 
+\f2\fs22 FSpOpenRF
+\f1\fs24  functions. For a description of the types of access which you can request, see {\field{\*\fldinst{HYPERLINK "file:///Developer/ADC%20Reference%20Library/documentation/Carbon/Reference/File_Manager/Reference/reference.html#//apple_ref/doc/constant_group/File_Access_Permission_Constants"}}{\fldrslt \cf2 \'d2File Access Permission Constants\'d3}}.\
+\pard\pardeftab720\ql\qnatural
+
+\f3\i \cf0 forkRefNum
+\f1\i0 \
+\pard\pardeftab720\sa120\ql\qnatural
+\cf0 On return, a pointer to the fork reference number for accessing the open fork.\
+\pard\pardeftab720\sa40\ql\qnatural
+
+\f0\b\fs26 \cf0 Return Value\
+\pard\pardeftab720\sa200\ql\qnatural
+
+\f1\b0\fs24 \cf0 A result code. See {\field{\*\fldinst{HYPERLINK "file:///Developer/ADC%20Reference%20Library/documentation/Carbon/Reference/File_Manager/Reference/reference.html#//apple_ref/doc/uid/TP30000107-CH5g-RCM0037"}}{\fldrslt \cf2 \'d2File Manager Result Codes\'d3}}. On some file systems, 
+\f2\fs22 FSOpenFork
+\f1\fs24  will return the error 
+\f2\fs22 eofErr
+\f1\fs24  if you try to open the resource fork of a file for which no resource fork exists with read-only access.
+\f0\b\fs38 \
+\pard\tx720\pardeftab720\sa40\ql\qnatural
+\cf0 \
+\pard\pardeftab720\ql\qnatural
+\cf0 FSGetDataForkName\
+\pard\pardeftab720\sa200\ql\qnatural
+
+\f1\b0\fs24 \cf0 Returns a Unicode string constant for the name of the data fork.\
+\
+\pard\pardeftab720\ql\qnatural
+
+\f2\fs22 \cf0 OSErr FSGetDataForkName (\
+   {\field{\*\fldinst{HYPERLINK "file:///Developer/ADC%20Reference%20Library/documentation/Carbon/Reference/File_Manager/Reference/reference.html#//apple_ref/doc/c_ref/HFSUniStr255"}}{\fldrslt \cf2 HFSUniStr255}} * dataForkName\
+);\
+\pard\pardeftab720\sa200\ql\qnatural
+
+\f1\fs24 \cf0 \
+\pard\pardeftab720\sa40\ql\qnatural
+
+\f0\b\fs26 \cf0 Parameters\
+\pard\pardeftab720\ql\qnatural
+
+\f3\i\b0\fs24 \cf0 dataForkName
+\f1\i0 \
+\pard\pardeftab720\sa120\ql\qnatural
+\cf0 On input, a pointer to an 
+\f2\fs22 HFSUniStr255
+\f1\fs24  structure. On return, this structure contains the Unicode name of the data fork. Currently, this is the empty string. See {\field{\*\fldinst{HYPERLINK "file:///Developer/ADC%20Reference%20Library/documentation/Carbon/Reference/File_Manager/Reference/reference.html#//apple_ref/c/tdef/HFSUniStr255"}}{\fldrslt 
+\f2\fs22 \cf2 HFSUniStr255}} for a description of the 
+\f2\fs22 HFSUniStr255
+\f1\fs24  data type.\
+\pard\pardeftab720\sa40\ql\qnatural
+
+\f0\b\fs26 \cf0 Return Value\
+\pard\pardeftab720\sa200\ql\qnatural
+
+\f1\b0\fs24 \cf0 A result code. See {\field{\*\fldinst{HYPERLINK "file:///Developer/ADC%20Reference%20Library/documentation/Carbon/Reference/File_Manager/Reference/reference.html#//apple_ref/doc/uid/TP30000107-CH5g-RCM0037"}}{\fldrslt \cf2 \'d2File Manager Result Codes\'d3}}.\
+
+\f0\b\fs38 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\ql\qnatural
+\ls3\ilvl0\cf0 NewMovieFromFile\
+\pard\pardeftab720\sa200\ql\qnatural
+
+\f1\b0\fs24 \cf0 Creates a new movie in memory from a movie file or from any type of file for which QuickTime provides an import component (AIFF, JPEG, MPEG-4, etc).\
+\
+\pard\pardeftab720\ql\qnatural
+
+\f2\fs22 \cf0 OSErr NewMovieFromFile (\
+   {\field{\*\fldinst{HYPERLINK "file:///Developer/ADC%20Reference%20Library/documentation/QuickTime/Reference/QTRef_DataTypes/Reference/reference.html#//apple_ref/doc/c_ref/Movie"}}{\fldrslt \cf3 Movie}}        *theMovie,\
+   short        resRefNum,\
+   short        *resId,\
+   {\field{\*\fldinst{HYPERLINK "file:///Developer/ADC%20Reference%20Library/documentation/QuickTime/Reference/QTRef_DataTypes/Reference/reference.html#//apple_ref/doc/c_ref/StringPtr"}}{\fldrslt \cf3 StringPtr}}    resName,\
+   short        newMovieFlags,\
+   Boolean      *dataRefWasChanged );\
+\pard\pardeftab720\sa200\ql\qnatural
+
+\f1\fs24 \cf0 \
+\pard\pardeftab720\sa40\ql\qnatural
+
+\f0\b\fs26 \cf0 Parameters\
+\pard\pardeftab720\ql\qnatural
+
+\f3\i\b0\fs24 \cf0 theMovie
+\f1\i0 \
+\pard\pardeftab720\sa120\ql\qnatural
+\cf0 A pointer to a field that is to receive the new movie's identifier. If the function cannot load the movie, the returned identifier is set to 
+\f2\fs22 NIL
+\f1\fs24 .\
+\pard\pardeftab720\ql\qnatural
+
+\f3\i \cf0 resRefNum
+\f1\i0 \
+\pard\pardeftab720\sa120\ql\qnatural
+\cf0 The movie file from which the movie is to be loaded. Your application obtains this value from the {\field{\*\fldinst{HYPERLINK "file:///Developer/ADC%20Reference%20Library/documentation/QuickTime/Reference/QTRef_MovieToolkit/Reference/reference.html#//apple_ref/c/func/OpenMovieFile"}}{\fldrslt 
+\f2\fs22 \cf3 OpenMovieFile}} function.\
+\pard\pardeftab720\ql\qnatural
+
+\f3\i \cf0 resId
+\f1\i0 \
+\pard\pardeftab720\sa120\ql\qnatural
+\cf0 A pointer to a field that specifies the resource containing the movie data that is to be loaded. If the field referred to by the 
+\f2\fs22 resId
+\f1\fs24  parameter is set to 0, the Movie Toolbox loads the first movie resource it finds in the specified file. The Movie Toolbox then returns the movie's resource ID number in the field referred to by the 
+\f2\fs22 resId
+\f1\fs24  parameter. An enumerated constant (see below) is available. See these constants:\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\ql\qnatural
+\ls4\ilvl0
+\f2\fs22 \cf0 {\listtext	\'a5	}movieInDataForkResID
+\f1\fs24 \
+\pard\pardeftab720\sa120\ql\qnatural
+\cf0 \
+\pard\pardeftab720\ql\qnatural
+
+\f3\i \cf0 resName
+\f1\i0 \
+\pard\pardeftab720\sa120\ql\qnatural
+\cf0 A pointer to a character string that is to receive the name of the movie resource that is loaded. If you set the 
+\f2\fs22 resName
+\f1\fs24  parameter to 
+\f2\fs22 NIL
+\f1\fs24 , the Movie Toolbox does not return the resource name.\
+\pard\pardeftab720\ql\qnatural
+
+\f3\i \cf0 newMovieFlags
+\f1\i0 \
+\pard\pardeftab720\sa120\ql\qnatural
+\cf0 Flags (see below) that control the operation of 
+\f2\fs22 NewMovieFromFile
+\f1\fs24 . Be sure to set unused flags to 0. See these constants:\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\ql\qnatural
+\ls5\ilvl0
+\f2\fs22 \cf0 {\listtext	\'a5	}newMovieActive
+\f1\fs24 \
+\ls5\ilvl0
+\f2\fs22 {\listtext	\'a5	}newMovieDontResolveDataRefs
+\f1\fs24 \
+\ls5\ilvl0
+\f2\fs22 {\listtext	\'a5	}newMovieDontAskUnresolvedDataRefs
+\f1\fs24 \
+\pard\pardeftab720\sa120\ql\qnatural
+\cf0 \
+\pard\pardeftab720\ql\qnatural
+
+\f3\i \cf0 dataRefWasChanged
+\f1\i0 \
+\pard\pardeftab720\sa120\ql\qnatural
+\cf0 A pointer to a Boolean value. The Movie Toolbox sets the value to TRUE if any references were changed. Use {\field{\*\fldinst{HYPERLINK "file:///Developer/ADC%20Reference%20Library/documentation/QuickTime/Reference/QTRef_MovieToolkit/Reference/reference.html#//apple_ref/c/func/UpdateMovieResource"}}{\fldrslt 
+\f2\fs22 \cf3 UpdateMovieResource}} to preserve these changes. Set this parameter to 
+\f2\fs22 NIL
+\f1\fs24  if you don't want to receive this information. See {\field{\*\fldinst{HYPERLINK "file:///Developer/ADC%20Reference%20Library/documentation/QuickTime/Reference/QTRef_TrackAndMedia/Reference/reference.html#//apple_ref/c/func/NewMovieTrack"}}{\fldrslt 
+\f2\fs22 \cf3 NewMovieTrack}} for more information about data references.\
+\pard\pardeftab720\sa40\ql\qnatural
+
+\f0\b\fs26 \cf0 Return Value\
+\pard\pardeftab720\sa200\ql\qnatural
+
+\f1\b0\fs24 \cf0 If the Movie Toolbox cannot completely resolve all data references, it sets the current error value to 
+\f2\fs22 couldNotResolveDataRef
+\f1\fs24 . You can access error returns such as this through {\field{\*\fldinst{HYPERLINK "file:///Developer/ADC%20Reference%20Library/documentation/QuickTime/Reference/QTRef_MovieManager/Reference/reference.html#//apple_ref/c/func/GetMoviesError"}}{\fldrslt 
+\f2\fs22 \cf3 GetMoviesError}} and {\field{\*\fldinst{HYPERLINK "file:///Developer/ADC%20Reference%20Library/documentation/QuickTime/Reference/QTRef_MovieManager/Reference/reference.html#//apple_ref/c/func/GetMoviesStickyError"}}{\fldrslt 
+\f2\fs22 \cf3 GetMoviesStickyError}}, as well as in the function result. See 
+\f2\fs22 Error Codes
+\f1\fs24 .\
+\pard\pardeftab720\sa40\ql\qnatural
+
+\f0\b\fs26 \cf0 Discussion\
+\pard\pardeftab720\sa200\ql\qnatural
+
+\f1\b0\fs24 \cf0 The Movie Toolbox sets many movie characteristics to default values. If you want to change these defaults, your application must call other Movie Toolbox functions. For example, the Movie Toolbox sets the movie's graphics world to the one that is active when you call 
+\f2\fs22 NewMovieFromFile
+\f1\fs24 . To change the graphics world for the new movie, your application should use {\field{\*\fldinst{HYPERLINK "file:///Developer/ADC%20Reference%20Library/documentation/QuickTime/Reference/QTRef_MovieManager/Reference/reference.html#//apple_ref/c/func/SetMovieGWorld"}}{\fldrslt 
+\f2\fs22 \cf3 SetMovieGWorld}}.\
+\
+
+\f0\b\fs38 \
+\pard\pardeftab720\ql\qnatural
+\cf0 NewMovieFromDataFork\
+\pard\pardeftab720\sa200\ql\qnatural
+
+\f1\b0\fs24 \cf0 Retrieves a movie that is stored anywhere in the data fork of a specified Macintosh file.\
+\
+\pard\pardeftab720\ql\qnatural
+
+\f2\fs22 \cf0 OSErr NewMovieFromDataFork (\
+   {\field{\*\fldinst{HYPERLINK "file:///Developer/ADC%20Reference%20Library/documentation/QuickTime/Reference/QTRef_DataTypes/Reference/reference.html#//apple_ref/doc/c_ref/Movie"}}{\fldrslt \cf3 Movie}}      *theMovie,\
+   short      fRefNum,\
+   long       fileOffset,\
+   short      newMovieFlags,\
+   Boolean    *dataRefWasChanged );\
+\pard\pardeftab720\sa200\ql\qnatural
+
+\f1\fs24 \cf0 \
+\pard\pardeftab720\sa40\ql\qnatural
+
+\f0\b\fs26 \cf0 Parameters\
+\pard\pardeftab720\ql\qnatural
+
+\f3\i\b0\fs24 \cf0 theMovie
+\f1\i0 \
+\pard\pardeftab720\sa120\ql\qnatural
+\cf0 A pointer to a field that is to receive the new movie's identifier. If the function cannot load the movie, the returned identifier is set to 
+\f2\fs22 NIL
+\f1\fs24 .\
+\pard\pardeftab720\ql\qnatural
+
+\f3\i \cf0 fRefNum
+\f1\i0 \
+\pard\pardeftab720\sa120\ql\qnatural
+\cf0 A file reference number to a file that is already open.\
+\pard\pardeftab720\ql\qnatural
+
+\f3\i \cf0 fileOffset
+\f1\i0 \
+\pard\pardeftab720\sa120\ql\qnatural
+\cf0 The starting file offset of the atom in the data fork of the file specified by the 
+\f2\fs22 fRefNum
+\f1\fs24  parameter.\
+\pard\pardeftab720\ql\qnatural
+
+\f3\i \cf0 newMovieFlags
+\f1\i0 \
+\pard\pardeftab720\sa120\ql\qnatural
+\cf0 Flags (see below) that control characteristics of the new movie. See these constants:\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\ql\qnatural
+\ls6\ilvl0
+\f2\fs22 \cf0 {\listtext	\'a5	}newMovieActive
+\f1\fs24 \
+\ls6\ilvl0
+\f2\fs22 {\listtext	\'a5	}newMovieDontResolveDataRefs
+\f1\fs24 \
+\ls6\ilvl0
+\f2\fs22 {\listtext	\'a5	}newMovieDontAskUnresolvedDataRefs
+\f1\fs24 \
+\pard\pardeftab720\sa120\ql\qnatural
+\cf0 \
+\pard\pardeftab720\ql\qnatural
+
+\f3\i \cf0 dataRefWasChanged
+\f1\i0 \
+\pard\pardeftab720\sa120\ql\qnatural
+\cf0 A pointer to a Boolean value. The Movie Toolbox sets the value to TRUE if any of the movie's data references were changed. Use {\field{\*\fldinst{HYPERLINK "file:///Developer/ADC%20Reference%20Library/documentation/QuickTime/Reference/QTRef_MovieToolkit/Reference/reference.html#//apple_ref/c/func/UpdateMovieResource"}}{\fldrslt 
+\f2\fs22 \cf3 UpdateMovieResource}} to preserve these changes. If you do not want to receive this information, set the 
+\f2\fs22 dataRefWasChanged
+\f1\fs24  parameter to 
+\f2\fs22 NIL
+\f1\fs24 .\
+\pard\pardeftab720\sa40\ql\qnatural
+
+\f0\b\fs26 \cf0 Return Value\
+\pard\pardeftab720\sa200\ql\qnatural
+
+\f1\b0\fs24 \cf0 If the Movie Toolbox cannot completely resolve all data references, it sets the current error value to 
+\f2\fs22 couldNotResolveDataRef
+\f1\fs24 . You can access error returns such as this through {\field{\*\fldinst{HYPERLINK "file:///Developer/ADC%20Reference%20Library/documentation/QuickTime/Reference/QTRef_MovieManager/Reference/reference.html#//apple_ref/c/func/GetMoviesError"}}{\fldrslt 
+\f2\fs22 \cf3 GetMoviesError}} and {\field{\*\fldinst{HYPERLINK "file:///Developer/ADC%20Reference%20Library/documentation/QuickTime/Reference/QTRef_MovieManager/Reference/reference.html#//apple_ref/c/func/GetMoviesStickyError"}}{\fldrslt 
+\f2\fs22 \cf3 GetMoviesStickyError}}, as well as in the function result. See 
+\f2\fs22 Error Codes
+\f1\fs24 .\
+\pard\pardeftab720\sa40\ql\qnatural
+
+\f0\b\fs26 \cf0 Special Considerations\
+\pard\pardeftab720\sa200\ql\qnatural
+
+\f1\b0\fs24 \cf0 The Movie Toolbox automatically sets the movie's graphics world based on the current graphics port. Be sure that your application's graphics port is valid before you call this function, even if the movie is sound-only; you can use 
+\f2\fs22 GetGWorld
+\f1\fs24  to check for a valid port, or you can use 
+\f2\fs22 NewGWorld
+\f1\fs24  to create a port. The graphics port must remain valid for the life of the movie or until you set another valid graphics port for the movie using {\field{\*\fldinst{HYPERLINK "file:///Developer/ADC%20Reference%20Library/documentation/QuickTime/Reference/QTRef_MovieManager/Reference/reference.html#//apple_ref/c/func/SetMovieGWorld"}}{\fldrslt 
+\f2\fs22 \cf3 SetMovieGWorld}}.\
+\
+\
+\
+\pard\pardeftab720\ql\qnatural
+
+\f0\b\fs38 \cf0 OpenMovieStorage\
+\pard\pardeftab720\sa200\ql\qnatural
+
+\f1\b0\fs24 \cf0 Opens a data handler for movie storage.\
+\
+\pard\pardeftab720\ql\qnatural
+
+\f2\fs22 \cf0 OSErr OpenMovieStorage (\
+   Handle         dataRef,\
+   OSType         dataRefType,\
+   long           flags,\
+   {\field{\*\fldinst{HYPERLINK "file:///Developer/ADC%20Reference%20Library/documentation/QuickTime/Reference/QTRef_DataTypes/Reference/reference.html#//apple_ref/doc/c_ref/DataHandler"}}{\fldrslt \cf3 DataHandler}}    *outDataHandler );\
+\pard\pardeftab720\sa200\ql\qnatural
+
+\f1\fs24 \cf0 \
+\pard\pardeftab720\sa40\ql\qnatural
+
+\f0\b\fs26 \cf0 Parameters\
+\pard\pardeftab720\ql\qnatural
+
+\f3\i\b0\fs24 \cf0 dataRef
+\f1\i0 \
+\pard\pardeftab720\sa120\ql\qnatural
+\cf0 A handle to a QuickTime data reference.\
+\pard\pardeftab720\ql\qnatural
+
+\f3\i \cf0 dataRefType
+\f1\i0 \
+\pard\pardeftab720\sa120\ql\qnatural
+\cf0 The data reference type. See 
+\f2\fs22 Data References
+\f1\fs24 .\
+\pard\pardeftab720\ql\qnatural
+
+\f3\i \cf0 flags
+\f1\i0 \
+\pard\pardeftab720\sa120\ql\qnatural
+\cf0 A constant (see below) that determines the reading and writing capabilities of the data handler. See these constants:\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\ql\qnatural
+\ls7\ilvl0{\field{\*\fldinst{HYPERLINK "file:///Developer/ADC%20Reference%20Library/documentation/QuickTime/Reference/QTRef_DataComponents/Reference/reference.html#//apple_ref/c/econst/kDataHCanRead"}}{\fldrslt 
+\f2\fs22 \cf3 {\listtext	\'a5	}kDataHCanRead}}\
+\ls7\ilvl0{\field{\*\fldinst{HYPERLINK "file:///Developer/ADC%20Reference%20Library/documentation/QuickTime/Reference/QTRef_DataComponents/Reference/reference.html#//apple_ref/c/econst/kDataHCanRead"}}{\fldrslt 
+\f2\fs22 \cf3 {\listtext	\'a5	}kDataHCanWrite}}\
+\pard\pardeftab720\sa120\ql\qnatural
+\cf0 \
+\pard\pardeftab720\ql\qnatural
+
+\f3\i \cf0 outDataHandler
+\f1\i0 \
+\pard\pardeftab720\sa120\ql\qnatural
+\cf0 A pointer to a field that is to receive the data handler for the opened movie file. Your application uses this value when calling other Movie Toolbox functions that work with movie files. If you pass 
+\f2\fs22 NIL
+\f1\fs24 , the Movie Toolbox creates the movie storage but does not open it.\
+\pard\pardeftab720\sa40\ql\qnatural
+
+\f0\b\fs26 \cf0 Return Value\
+\pard\pardeftab720\sa200\ql\qnatural
+
+\f1\b0\fs24 \cf0 You can access Movie Toolbox error returns through {\field{\*\fldinst{HYPERLINK "file:///Developer/ADC%20Reference%20Library/documentation/QuickTime/Reference/QTRef_MovieManager/Reference/reference.html#//apple_ref/c/func/GetMoviesError"}}{\fldrslt 
+\f2\fs22 \cf3 GetMoviesError}} and {\field{\*\fldinst{HYPERLINK "file:///Developer/ADC%20Reference%20Library/documentation/QuickTime/Reference/QTRef_MovieManager/Reference/reference.html#//apple_ref/c/func/GetMoviesStickyError"}}{\fldrslt 
+\f2\fs22 \cf3 GetMoviesStickyError}}, as well as in the function result. See 
+\f2\fs22 Error Codes
+\f1\fs24 .\
+\pard\pardeftab720\sa40\ql\qnatural
+
+\f0\b\fs26 \cf0 Discussion\
+\pard\pardeftab720\sa200\ql\qnatural
+
+\f1\b0\fs24 \cf0 This function is rarely used. It is an alternative to {\field{\*\fldinst{HYPERLINK "file:///Developer/ADC%20Reference%20Library/documentation/QuickTime/Reference/QTRef_MovieToolkit/Reference/reference.html#//apple_ref/c/func/OpenMovieFile"}}{\fldrslt 
+\f2\fs22 \cf3 OpenMovieFile}}.\
+\
+\pard\pardeftab720\ql\qnatural
+
+\f0\b\fs38 \cf0 OpenMovieFile\
+\pard\pardeftab720\sa200\ql\qnatural
+
+\f1\b0\fs24 \cf0 Opens a specified movie file.\
+\
+\pard\pardeftab720\ql\qnatural
+
+\f2\fs22 \cf0 OSErr OpenMovieFile (\
+   const {\field{\*\fldinst{HYPERLINK "file:///Developer/ADC%20Reference%20Library/documentation/QuickTime/Reference/QTRef_DataTypes/Reference/reference.html#//apple_ref/doc/c_ref/FSSpec"}}{\fldrslt \cf3 FSSpec}}    *fileSpec,\
+   short           *resRefNum,\
+   SInt8           permission );\
+\pard\pardeftab720\sa200\ql\qnatural
+
+\f1\fs24 \cf0 \
+\pard\pardeftab720\sa40\ql\qnatural
+
+\f0\b\fs26 \cf0 Parameters\
+\pard\pardeftab720\ql\qnatural
+
+\f3\i\b0\fs24 \cf0 fileSpec
+\f1\i0 \
+\pard\pardeftab720\sa120\ql\qnatural
+\cf0 A pointer to the 
+\f2\fs22 FSSpec
+\f1\fs24  structure for the movie file to be opened.\
+\pard\pardeftab720\ql\qnatural
+
+\f3\i \cf0 resRefNum
+\f1\i0 \
+\pard\pardeftab720\sa120\ql\qnatural
+\cf0 A pointer to a field that is to receive the file reference number for the opened movie file. Your application must use this value when calling other Movie Toolbox functions that work with movie files. This reference number refers to the file fork that contains the movie resource. If the movie is stored in the data fork of the file, the returned reference number corresponds to the data fork.\
+\pard\pardeftab720\ql\qnatural
+
+\f3\i \cf0 permission
+\f1\i0 \
+\pard\pardeftab720\sa120\ql\qnatural
+\cf0 The permission level for the file (see below). If your application is only going to play the movie that is stored in the file, you can open the file with read permission. If you plan to add data to the file or change data in the file, you should open the file with write permission. See these constants:\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\ql\qnatural
+\ls8\ilvl0\cf0 {\listtext	\'a5	}\
+\pard\pardeftab720\sa120\ql\qnatural
+\cf0 \
+\pard\pardeftab720\sa40\ql\qnatural
+
+\f0\b\fs26 \cf0 Return Value\
+\pard\pardeftab720\sa200\ql\qnatural
+
+\f1\b0\fs24 \cf0 You can access Movie Toolbox error returns through {\field{\*\fldinst{HYPERLINK "file:///Developer/ADC%20Reference%20Library/documentation/QuickTime/Reference/QTRef_MovieManager/Reference/reference.html#//apple_ref/c/func/GetMoviesError"}}{\fldrslt 
+\f2\fs22 \cf3 GetMoviesError}} and {\field{\*\fldinst{HYPERLINK "file:///Developer/ADC%20Reference%20Library/documentation/QuickTime/Reference/QTRef_MovieManager/Reference/reference.html#//apple_ref/c/func/GetMoviesStickyError"}}{\fldrslt 
+\f2\fs22 \cf3 GetMoviesStickyError}}, as well as in the function result. See 
+\f2\fs22 Error Codes
+\f1\fs24 .\
+\pard\pardeftab720\sa40\ql\qnatural
+
+\f0\b\fs26 \cf0 Discussion\
+\pard\pardeftab720\sa200\ql\qnatural
+
+\f1\b0\fs24 \cf0 Your application must open a movie file before reading movie data from it or writing movie data to it. You can open a movie file more than once; be sure to call {\field{\*\fldinst{HYPERLINK "file:///Developer/ADC%20Reference%20Library/documentation/QuickTime/Reference/QTRef_MovieToolkit/Reference/reference.html#//apple_ref/c/func/CloseMovieFile"}}{\fldrslt 
+\f2\fs22 \cf3 CloseMovieFile}} once for each time you call this function. Note that opening the movie file with write permission does not prevent other applications from reading data from the movie file.\
+If the specified file has a resource fork, this function opens the resource fork and returns a file reference number to the resource fork. If the movie file does not have a resource fork (that is, it is a single-fork movie file), this function opens the data fork instead. In this case, your application cannot use {\field{\*\fldinst{HYPERLINK "file:///Developer/ADC%20Reference%20Library/documentation/QuickTime/Reference/QTRef_MovieToolkit/Reference/reference.html#//apple_ref/c/func/AddMovieResource"}}{\fldrslt 
+\f2\fs22 \cf3 AddMovieResource}} with the movie file.\
+\
+\
+\
+}

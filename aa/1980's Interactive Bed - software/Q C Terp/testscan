@@ -1,0 +1,1 @@
+struct tree {    struct tree *fo;				int			foo;				char		zoo;    int			goo;				char		c2;				char		c3;    char		c4;				long	l1;				} x;

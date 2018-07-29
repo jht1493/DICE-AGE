@@ -1,0 +1,1 @@
+/**/typedef struct qSymbolSpace	{	struct qSymbolSpace	*next;	long				nAlloced;	qSymbol				s[];	}	qSymbolSpace;	typedef struct qStringSpace	{	struct qStringSpace	*next;	long				nAlloced;	Byte				s[];	}	qConsSpace;	typedef struct qConsSpace	{	struct qConsSpace	*next;	long				nAlloced;	Byte				s[];	}	qConsSpace;	

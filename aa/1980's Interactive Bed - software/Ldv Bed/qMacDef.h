@@ -1,0 +1,1 @@
+/**/#ifndef	_ControlMgr_#include <ControlMgr.h>#endiftypedef struct WinoItem	{	int				type;	int				charCode;	int				dpage;	qItem			func;	ControlHandle	control;	}	WinoItem;	typedef struct Wino	{	long		type;	WindowPtr	window;	int			nitems;	WinoItem	witems[];	}	Wino;	#define SBarWidth	15#define qWinoSubType	'WINO'	
