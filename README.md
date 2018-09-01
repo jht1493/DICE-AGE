@@ -11,6 +11,8 @@ Where shall we be in years to come?
 
 ![1989 prior art](aa/1989%20prior-art%20letter%20to%20MACR/prior_art_1989-no-sig.jpg)
 
+![1983 MIT Arch Mac art](aa/1983%20After%20MIT/MIT%20Arc%20Mac/Couple2.jpg)
+
 ![1990's Director 1 ](aa/1990's%20MACR/Macromedia%20Products%20Box%20Images/D1/D1%20Box%20Front.jpg)
 
 ![1990's Director 2 ](aa/1990's%20MACR/Macromedia%20Products%20Box%20Images/D2/D2%20Studio%20Manual.jpg)
