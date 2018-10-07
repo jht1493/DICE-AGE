@@ -7,6 +7,10 @@ Copyright (c) 1987-present John Henry Thompson
 
 Where shall we be in years to come?
 
+My latest project, [2017 DICE](http://www.johnhenrythompson.com/3-dice)  was inspired by life work.
+
+Check it out.
+
 # Inventions
 
 ![1989 prior art](aa/1989%20prior-art%20letter%20to%20MACR/prior_art_1989-no-sig.jpg)
@@ -26,4 +30,3 @@ Where shall we be in years to come?
 
 ![2017 DICE App ](aa/2018/2018-02-34-DICE-192-IMG_2198.jpg)
 
-[2017 DICE](http://www.johnhenrythompson.com/3-dice)
